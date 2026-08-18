@@ -161,8 +161,14 @@ recorded as of last poll. The FASTQ files are excluded from this repo; refetch f
 ## 7. Reproducing
 
 ```bash
-python3 verification/verify_claims.py      # expect 77/77 PASS
+# Needs pandas/scipy; the system python3 does not have them. Use the loom env:
+~/.loom/analyses/phist2/.loom/env/bin/python3 verification/verify_claims.py
 ```
+
+Confirmed to give **77/77 PASS** running against this repository's committed data, so the archive is
+self-sufficient for the verification path. Note that the suite still asserts the *stale* PvPAM
+pseudogene count of 70 discussed in §5 — that claim will need revising once the baseline is
+regenerated.
 
 `pipeline.md` carries the full command ledger with a justification for every parameter. Paths in it
 are relative to the repository root, so they resolve as-is — except for the inputs listed in
