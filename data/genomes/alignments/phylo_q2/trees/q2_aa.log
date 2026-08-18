@@ -1,0 +1,662 @@
+IQ-TREE version 3.1.2 for MacOS ARM 64-bit built May 17 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    Antons-MacBook-Air.local (SSE4.2, 24 GB RAM)
+Command: /Users/anton/.loom/analyses/phist2/.loom/env/bin/iqtree3 -s phylo_q2/fs001_aa_trimmed.fa --prefix phylo_q2/trees/q2_aa -m MFP -B 1000 --bnni --alrt 1000 -T 8 --safe --seed 42 --redo
+Seed:    42 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed May 27 17:22:16 2026
+Kernel:  Safe SSE2 - 8 threads (10 CPU cores detected)
+
+Reading alignment file phylo_q2/fs001_aa_trimmed.fa ... Fasta format detected
+Reading fasta file: done in 0.0012269 secs using 91.61% CPU
+Alignment most likely contains protein sequences
+Constructing alignment: done in 0.00060606 secs using 81.51% CPU
+Alignment has 338 sequences with 247 columns, 247 distinct patterns
+247 parsimony-informative, 0 singleton sites, 0 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 7.48634e-05 secs using 207% CPU
+   1  CAI7719453.1         12.15%    passed     15.54%
+   2  PVP01_0003540.1-p1   12.15%    passed     47.62%
+   3  PVP01_0005410.1-p1   12.55%    failed      0.29%
+   4  CAG9474119.1         11.74%    passed     15.58%
+   5  CAG9485292.1         12.55%    passed     50.69%
+   6  PVP01_0007090.1-p1   26.32%    passed     75.55%
+   7  PVP01_0003230.1-p1   10.93%    passed     39.20%
+   8  PVP01_0004170.1-p1   10.93%    passed     38.96%
+   9  PVP01_0838600.1-p1   24.70%    passed     12.31%
+  10  PVP01_1100400.1-p1   21.46%    passed     67.80%
+  11  CAG9485296.1         46.15%    passed     18.67%
+  12  PVP01_0839100.1-p1   29.15%    failed      2.89%
+  13  CAI7718650.1         12.55%    failed      0.22%
+  14  PVP01_0001400.1-p1   19.84%    passed     66.48%
+  15  CAI7719400.1          7.29%    passed     74.64%
+  16  PVP01_0005690.1-p1   10.12%    passed     76.13%
+  17  PVP01_0101200.1-p1   10.12%    passed     87.77%
+  18  PVP01_0002480.1-p1   14.98%    passed     92.98%
+  19  CAI7718294.1         12.55%    passed      5.50%
+  20  CAG9483791.1         12.15%    passed     32.55%
+  21  PVP01_0009470.1-p1   18.22%    passed     61.22%
+  22  CAI7723983.1         10.12%    passed     38.21%
+  23  CAI7717557.1         10.93%    passed     67.31%
+  24  CAI7718682.1         26.72%    passed     55.19%
+  25  CAI7718271.1         16.60%    passed     12.10%
+  26  PVP01_0006280.1-p1   36.03%    passed     17.41%
+  27  CAI7723969.1          4.05%    failed      2.18%
+  28  PVP01_0120200.1-p1    4.86%    passed     83.83%
+  29  CAI7721748.1          4.86%    passed     75.17%
+  30  PVP01_0004070.1-p1   16.19%    passed     98.10%
+  31  CAI7724243.1         27.94%    passed     43.61%
+  32  CAI7724010.1         30.77%    passed     78.96%
+  33  CAG9479582.1          6.88%    passed     84.29%
+  34  PVP01_0010310.1-p1   17.81%    passed     98.60%
+  35  PVP01_0003860.1-p1    8.50%    passed     60.01%
+  36  CAG9474664.1         25.10%    passed     82.09%
+  37  CAI7719840.1          8.50%    passed     20.32%
+  38  CAI7724063.1          6.48%    passed     72.71%
+  39  CAG9480931.1         34.82%    passed     20.29%
+  40  PVP01_0001410.1-p1   21.46%    passed     45.95%
+  41  CAI7718377.1          6.48%    passed     92.54%
+  42  PVP01_0003830.1-p1   19.43%    passed      5.64%
+  43  CAI7721690.1          6.88%    passed     83.74%
+  44  CAI7724104.1          8.10%    passed     15.46%
+  45  CAI7724200.1          8.10%    passed     65.91%
+  46  PVP01_0007630.1-p1   18.62%    passed     84.16%
+  47  CAI7724280.1         12.55%    passed     45.39%
+  48  CAG9479399.1         11.74%    passed     61.62%
+  49  CAI7719039.1         13.36%    passed     69.88%
+  50  CAI7721778.1         12.55%    passed     61.97%
+  51  CAG9485392.1         14.17%    passed     55.61%
+  52  CAG9484547.1         11.74%    passed     98.60%
+  53  PVP01_0008410.1-p1   12.15%    passed     88.54%
+  54  PVP01_0001710.1-p1   11.74%    passed     96.18%
+  55  PVP01_0840900.1-p1   12.55%    passed     23.49%
+  56  CAI7719849.1         12.55%    passed     80.45%
+  57  CAI7718323.1         12.96%    passed     25.46%
+  58  PVP01_0008460.1-p1   14.57%    passed     96.25%
+  59  PVP01_0502200.1-p1   11.34%    passed     81.33%
+  60  CAI7718293.1         10.12%    passed     36.56%
+  61  CAI7724102.1         12.15%    passed     81.67%
+  62  PVP01_0401800.1-p1   10.53%    passed      7.03%
+  63  PVP01_0300500.1-p1   19.43%    passed     90.42%
+  64  CAG9472702.1         12.15%    passed     93.56%
+  65  PVP01_0840500.1-p1   12.15%    passed      7.86%
+  66  PVP01_0000320.1-p1   10.12%    passed     60.01%
+  67  CAI7720798.1         14.57%    passed     38.64%
+  68  CAI7724091.1         11.34%    passed     77.60%
+  69  CAG9473052.1         10.12%    passed     77.46%
+  70  CAI7721794.1         10.93%    passed     73.04%
+  71  PVP01_0003510.1-p1   26.32%    passed     22.45%
+  72  CAI7718345.1         11.34%    passed     41.52%
+  73  CAG9480110.1         22.67%    passed     33.89%
+  74  PVP01_0006470.1-p1   23.08%    passed     87.25%
+  75  PVP01_0002860.1-p1   22.67%    passed     20.58%
+  76  PVP01_0007040.1-p1   22.67%    passed     19.26%
+  77  CAG9483848.1         23.08%    passed     26.84%
+  78  PVP01_0200500.1-p1   22.67%    passed     47.98%
+  79  CAI7718036.1         24.29%    passed      9.85%
+  80  CAG9480124.1         22.67%    passed     44.23%
+  81  CAI7721797.1         25.51%    passed     47.32%
+  82  CAG9475301.1         25.51%    passed     50.14%
+  83  CAG9479596.1         23.08%    passed     94.67%
+  84  PVP01_0003880.1-p1   22.67%    passed     91.55%
+  85  CAI7718061.1         23.89%    passed     22.33%
+  86  CAG9484362.1         25.51%    passed     34.82%
+  87  CAG9485725.1         25.51%    passed     69.85%
+  88  CAI7724059.1         20.24%    passed     95.47%
+  89  PVP01_0006130.1-p1   17.41%    passed     22.42%
+  90  CAG9479571.1         19.84%    passed     81.04%
+  91  PVP01_0005230.1-p1   47.77%    passed     36.71%
+  92  CAG9485500.1         27.94%    passed     87.64%
+  93  PVP01_0000630.1-p1   23.08%    passed     61.70%
+  94  PVP01_0000510.1-p1   34.01%    passed     99.60%
+  95  CAI7722626.1         22.27%    passed     95.90%
+  96  CAG9475306.1         24.29%    passed     79.89%
+  97  PVP01_0121100.1-p1   18.22%    passed     28.53%
+  98  PVP01_0004450.1-p1   17.81%    passed     15.35%
+  99  CAI7723953.1         17.81%    passed     46.47%
+ 100  CAI7722579.1         21.86%    passed      9.38%
+ 101  CAG9473095.1         21.46%    passed     70.88%
+ 102  PVP01_0100600.1-p1   21.05%    passed     91.33%
+ 103  CAI7722614.1         35.63%    passed     73.65%
+ 104  CAG9485750.1         21.86%    passed     77.05%
+ 105  CAI7722578.1         20.24%    passed     77.98%
+ 106  CAI7720814.1         21.86%    passed     97.44%
+ 107  CAI7721667.1         18.62%    passed     37.47%
+ 108  PVP01_0000650.1-p1   18.62%    passed     97.90%
+ 109  CAI7717603.1         17.81%    passed     89.38%
+ 110  CAG9480911.1         19.03%    passed     48.21%
+ 111  CAI7722652.1         16.60%    passed     37.22%
+ 112  CAG9485756.1         16.60%    passed     27.19%
+ 113  CAI7722629.1         17.00%    failed      2.13%
+ 114  PVP01_0000740.1-p1   16.60%    passed     96.38%
+ 115  CAG9485807.1         18.62%    passed     76.90%
+ 116  CAG9485744.1         18.22%    passed     58.79%
+ 117  CAI7722655.1         18.62%    passed     79.42%
+ 118  CAG9482251.1         18.22%    passed     94.52%
+ 119  PVP01_0000700.1-p1   18.62%    passed     26.93%
+ 120  CAI7724069.1         21.86%    passed     71.52%
+ 121  CAI7722622.1         19.84%    passed     39.51%
+ 122  CAG9473089.1         17.81%    passed     45.75%
+ 123  CAG9476502.1         17.00%    passed     20.60%
+ 124  PVP01_0900300.1-p1   17.81%    passed     71.89%
+ 125  CAG9485599.1         34.82%    passed     81.70%
+ 126  PVP01_0121800.1-p1   18.62%    passed     63.16%
+ 127  CAI7719442.1         17.81%    passed     18.78%
+ 128  CAI7721624.1         21.46%    passed     77.96%
+ 129  PVP01_0006150.1-p1   21.46%    passed     67.28%
+ 130  CAI7723950.1         21.46%    passed     49.32%
+ 131  PVP01_0009650.1-p1   25.10%    passed     62.86%
+ 132  CAG9474520.1         22.67%    passed     39.65%
+ 133  CAI7724237.1         22.67%    passed     49.34%
+ 134  CAG9473087.1         24.70%    passed     72.90%
+ 135  CAI7722535.1         23.48%    passed     89.97%
+ 136  CAG9479402.1         26.32%    passed     36.71%
+ 137  CAI7718351.1         22.67%    passed     66.17%
+ 138  PVP01_0001070.1-p1   22.67%    passed     89.98%
+ 139  PVP01_0001260.1-p1   24.70%    failed      1.75%
+ 140  CAG9474623.1         22.67%    passed      6.93%
+ 141  PVP01_0001550.1-p1   23.89%    passed     17.41%
+ 142  PVP01_0004420.1-p1   29.15%    passed     72.03%
+ 143  CAG9473057.1         25.51%    passed     99.74%
+ 144  CAI7719065.1         23.08%    passed     82.61%
+ 145  CAG9474098.1         25.10%    passed     70.82%
+ 146  CAI7718374.1         23.08%    passed     31.58%
+ 147  CAG9483058.1         26.32%    passed     22.95%
+ 148  CAG9473049.1         24.70%    passed     94.80%
+ 149  PVP01_0007550.1-p1   36.84%    passed     17.86%
+ 150  CAI7722573.1         24.29%    passed     62.80%
+ 151  CAG9473050.1         23.48%    passed     68.09%
+ 152  CAI7718340.1         25.10%    passed     30.75%
+ 153  CAG9472714.1         30.36%    failed      0.00%
+ 154  PVP01_0006460.1-p1   25.51%    passed     77.63%
+ 155  CAI7720816.1         10.53%    passed     87.79%
+ 156  CAI7717859.1         12.96%    passed     65.65%
+ 157  PVP01_0201700.1-p1   14.17%    passed     11.80%
+ 158  PVP01_0533500.1-p1   11.74%    passed     58.13%
+ 159  CAG9474676.1          9.31%    passed     53.69%
+ 160  CAG9474597.1         11.34%    passed     78.99%
+ 161  CAG9483882.1          6.48%    passed     71.83%
+ 162  CAG9474539.1         12.55%    passed     90.70%
+ 163  CAG9474577.1         25.10%    passed     32.55%
+ 164  CAI7724170.1          7.69%    passed     70.80%
+ 165  CAG9474596.1          7.69%    passed     99.46%
+ 166  PVP01_0001230.1-p1    7.69%    passed     32.35%
+ 167  CAI7724134.1          7.69%    passed     99.51%
+ 168  CAG9474592.1          6.07%    passed     93.38%
+ 169  CAI7724214.1          6.88%    passed     70.58%
+ 170  PVP01_0001130.1-p1    6.88%    passed     79.66%
+ 171  CAG9474673.1          8.10%    passed     97.23%
+ 172  CAI7724150.1          7.69%    passed     28.97%
+ 173  CAG9474616.1          8.10%    passed     60.19%
+ 174  CAI7720788.1          8.50%    passed     95.03%
+ 175  PVP01_1001800.1-p1    7.69%    passed     99.78%
+ 176  CAG9474714.1          8.10%    passed     60.18%
+ 177  PVP01_0001050.1-p1   19.43%    passed     88.53%
+ 178  CAG9474701.1          8.91%    passed     99.64%
+ 179  CAI7724178.1         14.17%    passed     95.86%
+ 180  PVP01_0001250.1-p1    6.48%    passed     42.91%
+ 181  CAG9474609.1          6.48%    passed     85.85%
+ 182  PVP01_1000800.1-p1   33.60%    passed     98.78%
+ 183  PVP01_0001280.1-p1    7.69%    passed     21.21%
+ 184  CAG9474564.1          6.88%    passed     57.23%
+ 185  CAG9474555.1          9.72%    passed     35.41%
+ 186  CAG9474584.1          8.50%    passed     65.34%
+ 187  CAG9474629.1         17.00%    passed     95.00%
+ 188  CAG9474590.1          8.10%    passed     40.25%
+ 189  PVP01_0001100.1-p1   11.34%    passed     74.89%
+ 190  CAI7724156.1         27.13%    passed     98.43%
+ 191  CAI7724149.1          8.50%    passed     70.41%
+ 192  CAG9484339.1         17.00%    passed     93.27%
+ 193  CAG9474097.1         12.55%    passed     60.42%
+ 194  CAG9482188.1         13.77%    passed     38.25%
+ 195  CAI7719385.1         14.17%    passed     92.51%
+ 196  PVP01_0008490.1-p1   14.98%    passed     95.32%
+ 197  CAG9476500.1         14.98%    passed     99.10%
+ 198  PVP01_0009960.1-p1   36.03%    passed     47.40%
+ 199  CAG9474079.1         12.55%    passed     13.48%
+ 200  PVP01_0503200.1-p1   12.55%    passed     37.71%
+ 201  PVP01_0009300.1-p1   12.55%    passed     44.89%
+ 202  PVP01_0008770.1-p1   17.81%    passed     50.99%
+ 203  CAI7723940.1         15.79%    passed     52.23%
+ 204  PVP01_0003220.1-p1   13.36%    passed     47.25%
+ 205  PVP01_1274800.1-p1   13.36%    passed     44.87%
+ 206  PVP01_0010160.1-p1   14.17%    passed     98.64%
+ 207  PVP01_0008570.1-p1   12.96%    passed     71.58%
+ 208  CAG9481947.1         14.98%    passed     31.55%
+ 209  CAI7719363.1         13.36%    passed     98.32%
+ 210  PVP01_0004130.1-p1   13.77%    passed     93.05%
+ 211  PVP01_0006670.1-p1   15.38%    passed     24.93%
+ 212  CAI7719087.1         13.77%    passed     65.73%
+ 213  CAG9485310.1         13.36%    passed     99.24%
+ 214  CAI7724240.1         24.70%    passed     84.87%
+ 215  PVP01_0006570.1-p1   15.38%    passed     98.66%
+ 216  CAG9482319.1         15.38%    passed     60.18%
+ 217  CAI7723986.1         14.98%    passed     84.56%
+ 218  CAG9485349.1         15.38%    passed     92.19%
+ 219  CAI7720820.1          8.91%    passed     91.17%
+ 220  CAI7720817.1          6.88%    passed     63.62%
+ 221  PVP01_0000930.1-p1   10.93%    passed     70.31%
+ 222  PVP01_1001100.1-p1   10.53%    passed     48.39%
+ 223  CAI7724140.1         10.93%    passed     79.77%
+ 224  CAG9474551.1         11.34%    passed     98.84%
+ 225  CAG9474611.1         23.89%    passed     90.11%
+ 226  PVP01_0007580.1-p1   31.58%    passed     85.04%
+ 227  CAG9474589.1          6.88%    passed     99.26%
+ 228  CAG9474546.1          6.88%    passed     70.21%
+ 229  CAG9474571.1          6.88%    passed     72.00%
+ 230  CAI7720807.1          6.88%    passed     80.58%
+ 231  CAG9474620.1          9.31%    passed     26.16%
+ 232  CAG9474682.1          7.69%    passed     93.16%
+ 233  CAI7724282.1         10.53%    passed     83.05%
+ 234  CAI7719433.1          9.72%    passed     54.12%
+ 235  CAG9474576.1         10.93%    passed     76.24%
+ 236  PVP01_0000940.1-p1   14.57%    passed     99.14%
+ 237  PVP01_0001060.1-p1   14.57%    passed     42.93%
+ 238  CAI7724297.1          8.91%    passed     98.03%
+ 239  CAI7724168.1          9.31%    passed     85.64%
+ 240  PVP01_1001700.1-p1    9.31%    passed     47.44%
+ 241  CAG9474636.1         10.93%    passed     77.24%
+ 242  CAI7724139.1         10.12%    passed     50.02%
+ 243  CAG9472749.1         10.12%    passed     89.22%
+ 244  CAG9484527.1          8.10%    passed     76.53%
+ 245  CAI7721718.1         11.34%    passed     92.24%
+ 246  CAI7724141.1         19.03%    passed     30.02%
+ 247  PVP01_0004180.1-p1    6.88%    passed     78.03%
+ 248  CAI7724299.1          6.07%    passed     49.45%
+ 249  CAI7720813.1         19.03%    passed     13.32%
+ 250  PVP01_0004020.1-p1    7.69%    passed     86.99%
+ 251  CAG9473062.1          9.31%    passed     22.88%
+ 252  CAG9473047.1         12.55%    passed      7.62%
+ 253  CAG9484397.1          8.50%    failed      1.13%
+ 254  CAG9483097.1         14.57%    failed      2.72%
+ 255  PVP01_0001470.1-p1   10.93%    passed     58.34%
+ 256  CAI7724174.1         11.34%    passed     99.86%
+ 257  CAI7724191.1         15.38%    failed      1.85%
+ 258  PVP01_0624600.1-p1   12.55%    passed     72.07%
+ 259  CAG9481994.1         17.81%    passed     42.33%
+ 260  PVP01_0010360.1-p1   21.46%    passed      5.38%
+ 261  CAI7718049.1         14.17%    failed      4.11%
+ 262  CAG9473061.1         14.17%    passed     50.78%
+ 263  PVP01_0400800.1-p1   20.65%    passed     76.48%
+ 264  PVP01_1148500.1-p1   15.79%    passed     47.75%
+ 265  CAI7719033.1         12.15%    passed     10.60%
+ 266  CAI7719027.1         18.62%    passed     17.79%
+ 267  CAI7721632.1         14.17%    failed      0.90%
+ 268  PVP01_0535400.1-p1   22.27%    failed      3.87%
+ 269  CAI7722530.1         14.98%    passed     66.22%
+ 270  CAI7724041.1         16.19%    passed     65.65%
+ 271  PVP01_0004400.1-p1   14.98%    passed     54.83%
+ 272  CAG9479559.1         18.22%    passed     21.16%
+ 273  PVP01_0008650.1-p1   18.22%    passed     81.01%
+ 274  CAG9477424.1         19.03%    passed     61.90%
+ 275  PVP01_0003760.1-p1   14.57%    passed     30.17%
+ 276  CAG9485331.1         14.57%    passed     70.24%
+ 277  CAI7721154.1         35.63%    passed     73.41%
+ 278  CAG9483645.1         12.96%    passed     18.14%
+ 279  CAG9480883.1         12.55%    passed      6.07%
+ 280  PVP01_0008830.1-p1   35.63%    passed     37.01%
+ 281  CAI7721723.1         11.74%    passed     32.07%
+ 282  PVP01_0005560.1-p1   25.10%    failed      2.13%
+ 283  CAG9474524.1         10.93%    passed     13.53%
+ 284  CAG9472742.1         10.93%    passed     86.19%
+ 285  PVP01_0501400.1-p1   15.38%    passed     22.69%
+ 286  PVP01_0003620.1-p1   12.15%    passed     35.27%
+ 287  CAI7718376.1         15.79%    passed     70.23%
+ 288  PVP01_0500700.1-p1   11.74%    failed      0.45%
+ 289  CAG9482856.1         10.12%    passed     47.14%
+ 290  PVP01_1274300.1-p1   12.96%    passed     54.14%
+ 291  CAI7718276.1         10.93%    failed      2.69%
+ 292  CAI7718352.1         10.12%    passed     69.94%
+ 293  CAI7719044.1          9.72%    passed     43.53%
+ 294  PVP01_1100300.1-p1   13.36%    passed     22.07%
+ 295  CAG9483818.1         13.36%    passed     87.06%
+ 296  CAG9472763.1         21.86%    passed     32.31%
+ 297  CAI7719413.1         21.46%    passed     70.14%
+ 298  PVP01_0010190.1-p1   21.05%    passed     71.61%
+ 299  PVP01_0006020.1-p1   35.22%    passed     27.57%
+ 300  CAG9474558.1         17.81%    passed     65.99%
+ 301  CAG9482308.1         18.22%    passed     85.35%
+ 302  CAI7717642.1         20.65%    passed     59.95%
+ 303  CAG9485469.1         16.19%    passed     29.87%
+ 304  CAG9474085.1         18.62%    passed     46.72%
+ 305  CAG9485494.1         15.79%    passed     59.43%
+ 306  PVP01_0219500.1-p1   13.77%    passed     63.75%
+ 307  PVP01_0503100.1-p1   11.74%    passed     60.35%
+ 308  CAG9482206.1         13.36%    passed     27.23%
+ 309  CAI7722607.1         19.84%    passed     56.90%
+ 310  PVP01_0200900.1-p1   15.38%    passed     40.81%
+ 311  CAI7722609.1         24.29%    passed     18.14%
+ 312  PVP01_0009220.1-p1   20.24%    passed     29.04%
+ 313  PVP01_0009340.1-p1   13.36%    failed      1.88%
+ 314  PVP01_0000250.1-p1   23.08%    passed     34.62%
+ 315  CAG9485817.1         27.94%    passed     12.05%
+ 316  CAG9485810.1         33.60%    failed      3.80%
+ 317  CAI7718711.1         18.22%    passed     49.57%
+ 318  CAG9473015.1         18.62%    passed     28.71%
+ 319  CAI7723957.1         17.00%    passed     93.25%
+ 320  CAI7719838.1         14.98%    passed     75.42%
+ 321  PVP01_0218300.1-p1   17.41%    passed     48.37%
+ 322  CAI7719418.1         17.00%    passed      9.14%
+ 323  CAI7723147.1         16.19%    passed     36.86%
+ 324  CAI7717551.1         14.57%    passed     56.02%
+ 325  PVP01_0003660.1-p1   14.57%    passed     36.58%
+ 326  CAG9483811.1         17.00%    passed     74.05%
+ 327  PVP01_0007930.1-p1   17.41%    passed     59.41%
+ 328  CAG9473035.1         15.79%    passed     59.03%
+ 329  PVP01_0009450.1-p1   15.79%    passed     34.09%
+ 330  PVP01_0006970.1-p1   15.79%    passed     21.57%
+ 331  CAG9476497.1         50.61%    passed     42.64%
+ 332  PVP01_0200100.1-p1   16.60%    passed     60.76%
+ 333  CAI7717847.1         16.60%    passed     65.38%
+ 334  CAG9472716.1         20.65%    passed     55.34%
+ 335  CAG9479363.1         12.96%    passed     56.94%
+ 336  PVP01_0008020.1-p1   16.60%    passed     79.01%
+ 337  CAG9484559.1         17.00%    passed     60.07%
+ 338  PVP01_0009990.1-p1   30.77%    passed     84.98%
+WARNING: 1 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                16.73%  18 sequences failed composition chi2 test (p-value<5%; df=19)
+Checking for duplicate sequences: done in 0.000378847 secs using 96.87% CPU
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.053 seconds
+Perform fast likelihood tree search using LG+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -153293.834
+Optimal log-likelihood: -153293.536
+Gamma shape alpha: 3.304
+Parameters optimization took 1 rounds (0.534 sec)
+Time for fast ML tree search: 12.524 seconds
+
+NOTE: ModelFinder requires 140 MB RAM!
+ModelFinder will test up to 616 protein models (sample size: 247 epsilon: 0.100) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  LG            155639.918   673 312625.836   1219829.836  314987.655
+  2  LG+G4         153293.515   674 307935.031   1217835.031  310300.359
+  3  LG+R2         153722.853   675 308795.707   1221395.707  311164.544
+  4  LG+R3         153378.089   677 308110.179   1226122.179  310486.035
+  5  LG+R4         153238.390   679 307834.779   1231274.779  310217.654
+  6  LG+R5         153191.893   681 307745.785   1236629.785  310135.679
+  7  LG+R6         153153.387   683 307672.773   1242016.773  310069.686
+  8  LG+R7         153151.712   685 307673.425   1247493.425  310077.356
+ 18  LG+F+R6       150281.453   702 301966.906   1288978.906  304430.497
+ 19  LG+F+R7       150276.336   704 301960.671   1294600.671  304431.281
+ 29  WAG+R6        151763.028   683 304892.057   1239236.057  307288.969
+ 30  WAG+R7        151754.907   685 304879.815   1244699.815  307283.746
+ 40  WAG+F+R6      148626.682   702 298657.364   1285669.364  301120.955
+ 41  WAG+F+R7      148615.848   704 298639.697   1291279.697  301110.306
+ 51  JTT+R6        152072.459   683 305510.918   1239854.918  307907.830
+ 52  JTT+R7        152065.301   685 305500.602   1245320.602  307904.533
+ 62  JTT+F+R6      148626.153   702 298656.306   1285668.306  301119.897
+ 63  JTT+F+R7      148616.969   704 298641.939   1291281.939  301112.548
+ 73  Q.PFAM+R6     153436.556   683 308239.113   1242583.113  310636.025
+ 74  Q.PFAM+R7     153426.282   685 308222.565   1248042.565  310626.496
+ 84  Q.PFAM+F+R6   150164.536   702 301733.073   1288745.073  304196.663
+ 85  Q.PFAM+F+R7   150159.763   704 301727.527   1294367.527  304198.136
+ 95  Q.BIRD+R6     154582.788   683 310531.577   1244875.577  312928.489
+ 96  Q.BIRD+R7     154567.442   685 310504.884   1250324.884  312908.815
+106  Q.BIRD+F+R6   150288.323   702 301980.645   1288992.645  304444.236
+107  Q.BIRD+F+R7   150274.191   704 301956.383   1294596.383  304426.992
+117  Q.MAMMAL+R6   154636.473   683 310638.947   1244982.947  313035.859
+118  Q.MAMMAL+R7   154623.078   685 310616.157   1250436.157  313020.088
+128  Q.MAMMAL+F+R6 149996.620   702 301397.241   1288409.241  303860.832
+129  Q.MAMMAL+F+R7 149986.343   704 301380.686   1294020.686  303851.296
+139  Q.INSECT+R6   152863.878   683 307093.756   1241437.756  309490.668
+140  Q.INSECT+R7   152854.248   685 307078.496   1246898.496  309482.427
+150  Q.INSECT+F+R6 150531.357   702 302466.713   1289478.713  304930.304
+151  Q.INSECT+F+R7 150521.413   704 302450.827   1295090.827  304921.436
+161  Q.PLANT+R6    153490.922   683 308347.844   1242691.844  310744.757
+162  Q.PLANT+R7    153480.230   685 308330.459   1248150.459  310734.390
+172  Q.PLANT+F+R6  150885.065   702 303174.130   1290186.130  305637.721
+173  Q.PLANT+F+R7  150865.292   704 303138.585   1295778.585  305609.194
+183  Q.YEAST+R6    152466.114   683 306298.229   1240642.229  308695.141
+184  Q.YEAST+R7    152445.853   685 306261.706   1246081.706  308665.637
+194  Q.YEAST+F+R6  150557.975   702 302519.951   1289531.951  304983.541
+195  Q.YEAST+F+R7  150550.524   704 302509.047   1295149.047  304979.657
+205  JTTDCMUT+R6   152115.403   683 305596.807   1239940.807  307993.719
+206  JTTDCMUT+R7   152107.669   685 305585.339   1245405.339  307989.270
+216  JTTDCMUT+F+R6 148675.397   702 298754.795   1285766.795  301218.385
+217  JTTDCMUT+F+R7 148665.732   704 298739.465   1291379.465  301210.074
+227  DCMUT+R6      153897.033   683 309160.065   1243504.065  311556.977
+228  DCMUT+R7      153882.372   685 309134.744   1248954.744  311538.675
+238  DCMUT+F+R6    149324.525   702 300053.051   1287065.051  302516.641
+239  DCMUT+F+R7    149305.181   704 300018.362   1292658.362  302488.971
+249  VT+R6         151238.746   683 303843.492   1238187.492  306240.405
+250  VT+R7         151233.205   685 303836.409   1243656.409  306240.340
+260  VT+F+R6       148476.412   702 298356.825   1285368.825  300820.415
+261  VT+F+R7       148471.989   704 298351.977   1290991.977  300822.587
+271  PMB+R6        152376.727   683 306119.455   1240463.455  308516.367
+272  PMB+R7        152373.483   685 306116.966   1245936.966  308520.897
+282  PMB+F+R6      148948.401   702 299300.802   1286312.802  301764.393
+283  PMB+F+R7      148944.671   704 299297.341   1291937.341  301767.951
+293  BLOSUM62+R6   152365.186   683 306096.372   1240440.372  308493.284
+294  BLOSUM62+R7   152360.813   685 306091.626   1245911.626  308495.557
+304  BLOSUM62+F+R6 149207.817   702 299819.634   1286831.634  302283.224
+305  BLOSUM62+F+R7 149203.380   704 299814.761   1292454.761  302285.370
+315  DAYHOFF+R6    153913.133   683 309192.266   1243536.266  311589.178
+316  DAYHOFF+R7    153902.228   685 309174.455   1248994.455  311578.386
+326  DAYHOFF+F+R6  149331.821   702 300067.642   1287079.642  302531.233
+327  DAYHOFF+F+R7  149315.612   704 300039.223   1292679.223  302509.833
+337  MTREV+R6      156455.678   683 314277.356   1248621.356  316674.269
+338  MTREV+R7      156439.380   685 314248.759   1254068.759  316652.690
+348  MTREV+F+R6    151645.883   702 304695.767   1291707.767  307159.357
+349  MTREV+F+R7    151631.759   704 304671.517   1297311.517  307142.127
+359  MTART+R6      160038.399   683 321442.799   1255786.799  323839.711
+360  MTART+R7      160014.186   685 321398.371   1261218.371  323802.302
+370  MTART+F+R6    154435.512   702 310275.024   1297287.024  312738.615
+371  MTART+F+R7    154418.596   704 310245.191   1302885.191  312715.801
+381  MTZOA+R6      158054.510   683 317475.021   1251819.021  319871.933
+382  MTZOA+R7      158038.414   685 317446.829   1257266.829  319850.760
+392  MTZOA+F+R6    152543.491   702 306490.982   1293502.982  308954.572
+393  MTZOA+F+R7    152532.975   704 306473.951   1299113.951  308944.560
+403  MTMET+R6      155244.281   683 311854.563   1246198.563  314251.475
+404  MTMET+R7      155226.660   685 311823.321   1251643.321  314227.252
+414  MTMET+F+R6    151132.982   702 303669.965   1290681.965  306133.556
+415  MTMET+F+R7    151112.469   704 303632.937   1296272.937  306103.547
+425  MTVER+R6      156991.768   683 315349.536   1249693.536  317746.448
+426  MTVER+R7      156980.885   685 315331.770   1255151.770  317735.701
+436  MTVER+F+R6    153128.823   702 307661.647   1294673.647  310125.237
+437  MTVER+F+R7    153089.777   704 307587.555   1300227.555  310058.164
+447  MTINV+R6      155996.640   683 313359.281   1247703.281  315756.193
+448  MTINV+R7      155989.566   685 313349.133   1253169.133  315753.064
+458  MTINV+F+R6    150585.241   702 302574.482   1289586.482  305038.073
+459  MTINV+F+R7    150568.082   704 302544.163   1295184.163  305014.773
+469  MTMAM+R6      158423.338   683 318212.675   1252556.675  320609.587
+470  MTMAM+R7      158405.408   685 318180.815   1258000.815  320584.746
+480  MTMAM+F+R6    154498.190   702 310400.380   1297412.380  312863.971
+481  MTMAM+F+R7    154471.595   704 310351.190   1302991.190  312821.800
+491  FLAVI+R6      156086.698   683 313539.395   1247883.395  315936.307
+492  FLAVI+R7      156061.842   685 313493.684   1253313.684  315897.615
+502  FLAVI+F+R6    151951.965   702 305307.930   1292319.930  307771.521
+503  FLAVI+F+R7    151931.624   704 305271.248   1297911.248  307741.857
+513  HIVB+R6       153163.767   683 307693.535   1242037.535  310090.447
+514  HIVB+R7       153147.096   685 307664.192   1247484.192  310068.123
+524  HIVB+F+R6     150592.595   702 302589.190   1289601.190  305052.781
+525  HIVB+F+R7     150556.463   704 302520.927   1295160.927  304991.536
+535  HIVW+R6       154277.390   683 309920.779   1244264.779  312317.692
+536  HIVW+R7       154276.431   685 309922.862   1249742.862  312326.793
+546  HIVW+F+R6     150394.013   702 302192.025   1289204.025  304655.616
+547  HIVW+F+R7     150383.726   704 302175.453   1294815.453  304646.062
+557  FLU+R6        152337.601   683 306041.203   1240385.203  308438.115
+558  FLU+R7        152321.420   685 306012.840   1245832.840  308416.771
+568  FLU+F+R6      149535.931   702 300475.861   1287487.861  302939.452
+569  FLU+F+R7      149520.218   704 300448.437   1293088.437  302919.046
+579  RTREV+R6      154749.053   683 310864.107   1245208.107  313261.019
+580  RTREV+R7      154734.392   685 310838.784   1250658.784  313242.715
+590  RTREV+F+R6    150949.808   702 303303.615   1290315.615  305767.206
+591  RTREV+F+R7    150944.358   704 303296.715   1295936.715  305767.325
+601  CPREV+R6      151666.477   683 304698.953   1239042.953  307095.866
+602  CPREV+R7      151656.467   685 304682.935   1244502.935  307086.866
+612  CPREV+F+R6    150185.394   702 301774.787   1288786.787  304238.378
+613  CPREV+F+R7    150167.720   704 301743.441   1294383.441  304214.050
+Akaike Information Criterion:           VT+F+R7
+Corrected Akaike Information Criterion: LG+G4
+Bayesian Information Criterion:         VT+F+R6
+Best-fit model: VT+F+R6 chosen according to BIC
+
+All model information printed to phylo_q2/trees/q2_aa.model.gz
+CPU time for ModelFinder: 5875.165 seconds (1h:37m:55s)
+Wall-clock time for ModelFinder: 1460.869 seconds (0h:24m:20s)
+Generating 1000 samples for ultrafast bootstrap (seed: 42)...
+
+NOTE: 85 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -148581.190
+2. Current log-likelihood: -148487.452
+3. Current log-likelihood: -148477.902
+4. Current log-likelihood: -148476.491
+Optimal log-likelihood: -148476.412
+Site proportion and rates:  (0.062,0.272) (0.097,0.467) (0.129,0.666) (0.238,0.888) (0.335,1.213) (0.139,1.682)
+Parameters optimization took 4 rounds (7.154 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 10.7787 secs using 695.9% CPU
+Computing ML distances took 10.779132 sec (of wall-clock time) 75.012720 sec (of CPU time)
+WARNING: Some pairwise ML distances are too long (saturated)
+Setting up auxiliary I and S matrices: done in 0.000854969 secs using 411.5% CPU
+Constructing RapidNJ tree: done in 0.0803599 secs using 92.11% CPU
+Computing RapidNJ tree took 0.081295 sec (of wall-clock time) 0.077678 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -149244.018
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 7.655 second
+Computing log-likelihood of 98 initial trees ... 33.965 seconds
+Current best score: -148476.412
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -148414.079
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -148366.892
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 6: -148346.383
+Iteration 10 / LogL: -148444.106 / Time: 0h:27m:27s
+Iteration 20 / LogL: -148475.006 / Time: 0h:29m:29s
+Finish initializing candidate tree set (20)
+Current best tree score: -148346.383 / CPU time: 285.039
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 26: -148323.643
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 29: -148310.386
+Iteration 30 / LogL: -148315.275 / Time: 0h:31m:19s (0h:23m:47s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 40: -148299.311
+Iteration 40 / LogL: -148299.311 / Time: 0h:32m:55s (0h:21m:58s left)
+Iteration 50 / LogL: -148304.880 / Time: 0h:34m:27s (0h:18m:35s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 52: -148296.642
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 59: -148294.671
+Iteration 60 / LogL: -148317.764 / Time: 0h:36m:9s (0h:19m:48s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 68: -148292.105
+Iteration 70 / LogL: -148297.606 / Time: 0h:37m:50s (0h:19m:9s left)
+Iteration 80 / LogL: -148329.283 / Time: 0h:39m:27s (0h:16m:49s left)
+Iteration 90 / LogL: -148333.354 / Time: 0h:40m:59s (0h:14m:34s left)
+Iteration 100 / LogL: -148300.269 / Time: 0h:42m:38s (0h:12m:33s left)
+Iteration 110 / LogL: -148315.585 / Time: 0h:44m:14s (0h:10m:35s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 115: -148290.881
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 116: -148287.401
+Iteration 120 / LogL: -148300.109 / Time: 0h:45m:54s (0h:17m:23s left)
+Iteration 130 / LogL: -148312.118 / Time: 0h:47m:32s (0h:15m:27s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 133: -148285.638
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 137: -148282.770
+Iteration 140 / LogL: -148314.043 / Time: 0h:49m:10s (0h:17m:19s left)
+Iteration 150 / LogL: -148308.408 / Time: 0h:50m:44s (0h:15m:24s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 154: -148282.693
+Iteration 160 / LogL: -148297.940 / Time: 0h:52m:18s (0h:16m:31s left)
+Iteration 170 / LogL: -148283.997 / Time: 0h:53m:54s (0h:14m:41s left)
+Iteration 180 / LogL: -148284.265 / Time: 0h:55m:26s (0h:12m:51s left)
+Iteration 190 / LogL: -148285.605 / Time: 0h:56m:59s (0h:11m:3s left)
+Iteration 200 / LogL: -148291.599 / Time: 0h:58m:32s (0h:9m:16s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 205: -148281.889
+Iteration 210 / LogL: -148305.998 / Time: 1h:0m:9s (0h:16m:16s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 218: -148280.065
+Iteration 220 / LogL: -148288.806 / Time: 1h:1m:41s (0h:16m:42s left)
+Iteration 230 / LogL: -148287.580 / Time: 1h:3m:16s (0h:14m:57s left)
+Iteration 240 / LogL: -148289.784 / Time: 1h:4m:51s (0h:13m:13s left)
+Iteration 250 / LogL: -148282.342 / Time: 1h:6m:22s (0h:11m:28s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 252: -148276.460
+Iteration 260 / LogL: -148290.163 / Time: 1h:7m:57s (0h:15m:29s left)
+Iteration 270 / LogL: -148289.703 / Time: 1h:9m:32s (0h:13m:46s left)
+Iteration 280 / LogL: -148287.753 / Time: 1h:11m:5s (0h:12m:3s left)
+Iteration 290 / LogL: -148306.202 / Time: 1h:12m:37s (0h:10m:21s left)
+Iteration 300 / LogL: -148284.357 / Time: 1h:14m:12s (0h:8m:40s left)
+Iteration 310 / LogL: -148310.132 / Time: 1h:15m:50s (0h:6m:59s left)
+Iteration 320 / LogL: -148281.912 / Time: 1h:17m:25s (0h:5m:19s left)
+Iteration 330 / LogL: -148284.078 / Time: 1h:18m:58s (0h:3m:39s left)
+Iteration 340 / LogL: -148282.046 / Time: 1h:20m:32s (0h:1m:59s left)
+Iteration 350 / LogL: -148313.285 / Time: 1h:22m:7s (0h:0m:19s left)
+Refining ufboot trees with NNI 1 branch...
+100 samples done
+200 samples done
+300 samples done
+400 samples done
+500 samples done
+600 samples done
+700 samples done
+800 samples done
+900 samples done
+1000 samples done
+Total 1000 ufboot trees refined
+TREE SEARCH COMPLETED AFTER 353 ITERATIONS / Time: 2h:5m:30s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -148276.460
+Optimal log-likelihood: -148276.459
+Site proportion and rates:  (0.062,0.267) (0.096,0.468) (0.116,0.658) (0.225,0.862) (0.354,1.196) (0.147,1.669)
+Parameters optimization took 1 rounds (0.615 sec)
+BEST SCORE FOUND : -148276.459
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+1.647 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file phylo_q2/trees/q2_aa.splits.nex
+Total tree length: 317.012
+
+Total number of iterations: 353
+CPU time used for tree search: 9319.164 sec (2h:35m:19s)
+Wall-clock time used for tree search: 6045.563 sec (1h:40m:45s)
+Total CPU time used: 15315.373 sec (4h:15m:15s)
+Total wall-clock time used: 7533.525 sec (2h:5m:33s)
+UFBoot trees printed to phylo_q2/trees/q2_aa.ufboot
+
+Computing bootstrap consensus tree...
+Reading input file phylo_q2/trees/q2_aa.splits.nex...
+338 taxa and 5145 splits.
+Consensus tree written to phylo_q2/trees/q2_aa.contree
+Reading input trees file phylo_q2/trees/q2_aa.contree
+Log-likelihood of consensus tree: -148280.971
+
+Analysis results written to: 
+  IQ-TREE report:                phylo_q2/trees/q2_aa.iqtree
+  Maximum-likelihood tree:       phylo_q2/trees/q2_aa.treefile
+  Likelihood distances:          phylo_q2/trees/q2_aa.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          phylo_q2/trees/q2_aa.splits.nex
+  Consensus tree:                phylo_q2/trees/q2_aa.contree
+  UFBoot trees:                  phylo_q2/trees/q2_aa.ufboot
+  Screen log file:               phylo_q2/trees/q2_aa.log
+
+Date and Time: Wed May 27 19:27:54 2026

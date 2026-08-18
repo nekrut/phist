@@ -1,0 +1,290 @@
+"""
+Claim verification agent for pvivax_PIR_characterization.pdf
+
+For each numerical / categorical claim in the paper, re-derive the value
+directly from the analysis outputs in data/ and report PASS / FAIL / NO-DATA.
+
+Usage: python verify_claims.py > verification_report.md
+"""
+import re, sys, os
+from pathlib import Path
+from collections import Counter, defaultdict
+import pandas as pd
+
+ROOT = Path("/Users/anton/.loom/analyses/phist2")
+ALN = ROOT / "data/genomes/alignments"
+
+# ---- helpers ----
+RESULTS = []
+def check(label, expected, observed, tol=None, expected_str=None, observed_str=None):
+    """Record a check. PASS if observed matches expected within tolerance."""
+    if expected is None or observed is None:
+        status = "NO-DATA"
+        match = False
+    elif isinstance(expected, (int, float)) and isinstance(observed, (int, float)):
+        if tol is None:
+            tol = 0
+        match = abs(observed - expected) <= tol
+        status = "PASS" if match else "FAIL"
+    else:
+        match = expected == observed
+        status = "PASS" if match else "FAIL"
+    RESULTS.append({
+        "label": label,
+        "expected": expected_str if expected_str is not None else str(expected),
+        "observed": observed_str if observed_str is not None else str(observed),
+        "status": status,
+    })
+
+def hdr(title):
+    print(f"\n## {title}\n")
+
+# ---- 1. PIR census from HMM-extracted FASTAs ----
+hdr("1. Assembly resources and PIR census")
+
+vir_counts = {}
+for g, path in [("PvP01","data/genomes/PvP01_vir_hmm.fasta"),
+                ("PvW1", "data/genomes/PvW1_vir_hmm.fasta"),
+                ("PvPAM","data/genomes/PvPAM_vir_hmm.fasta")]:
+    n = sum(1 for line in (ROOT/path).read_text().splitlines() if line.startswith(">"))
+    vir_counts[g] = n
+total_vir = sum(vir_counts.values())
+
+check("PvP01 VIR HMM hits", 931, vir_counts["PvP01"])
+check("PvW1 VIR HMM hits",  748, vir_counts["PvW1"])
+check("PvPAM VIR HMM hits", 985, vir_counts["PvPAM"])
+check("Total VIR HMM hits across 3 genomes", 2664, total_vir)
+
+# Total annotated proteins per genome
+prot_counts = {}
+for g, path in [("PvP01","data/genomes/PvP01_proteins.fasta"),
+                ("PvW1", "data/genomes/PvW1_proteins.fasta"),
+                ("PvPAM","data/genomes/PvPAM_proteins.fasta")]:
+    prot_counts[g] = sum(1 for line in (ROOT/path).read_text().splitlines() if line.startswith(">"))
+
+check("PvP01 total annotated proteins", 6523, prot_counts["PvP01"])
+check("PvW1 total annotated proteins",  6075, prot_counts["PvW1"])
+check("PvPAM total annotated proteins", 6462, prot_counts["PvPAM"])
+
+# Contig counts hosting VIRs (from vir_coords.tsv)
+coords = pd.read_csv(ALN/"spatial/vir_coords.tsv", sep="\t")
+for g in ["PvP01","PvW1","PvPAM"]:
+    sub = coords[coords["genome"]==g]
+    n_contigs = sub["chrom"].nunique()
+    expected = {"PvP01":130, "PvW1":17, "PvPAM":26}[g]
+    check(f"{g} contigs bearing >=1 VIR", expected, n_contigs)
+
+# Largest contig size
+chrom_size = coords.groupby(["genome","chrom"])["end"].max().reset_index()
+for g, expected_mb in [("PvP01",3.2), ("PvW1",3.7), ("PvPAM",3.3)]:
+    largest = chrom_size[chrom_size["genome"]==g]["end"].max() / 1e6
+    check(f"{g} largest contig (Mb)", expected_mb, round(largest,1), tol=0.1)
+
+# Main-chromosome VIR counts
+main_coords = pd.read_csv(ALN/"spatial/vir_coords_main.tsv", sep="\t")
+for g, expected in [("PvP01",347), ("PvW1",634), ("PvPAM",735)]:
+    n_main = (main_coords["genome"]==g).sum()
+    check(f"{g} VIRs on 14 main chromosomes", expected, int(n_main))
+
+# Main-chromosome length sum
+for g, expected_mb in [("PvP01",23.5), ("PvW1",27.7), ("PvPAM",27.4)]:
+    main_sub = main_coords[main_coords["genome"]==g]
+    total = main_sub.groupby("chrom")["end"].max().sum() / 1e6
+    check(f"{g} main-chromosome length sum (Mb)", expected_mb, round(total,1), tol=0.1)
+
+# ---- 2. Structural classes ----
+hdr("2. Structural classes")
+
+# Foldseek clusters
+fs_clusters = pd.read_csv(ALN/"foldseek_clusters_summary.tsv", sep="\t")
+n_fs = len(fs_clusters)
+check("Number of Foldseek clusters (>=3 members)", 73, n_fs)
+
+# FS_001 size and per-genome breakdown
+fs001 = fs_clusters[fs_clusters["FS_cluster"]=="FS_001"].iloc[0]
+check("FS_001 total size", 1197, int(fs001["size"]))
+check("FS_001 PvP01 members", 400, int(fs001["PvP01"]))
+check("FS_001 PvW1 members",  349, int(fs001["PvW1"]))
+check("FS_001 PvPAM members", 448, int(fs001["PvPAM"]))
+
+# Total clustered proteins
+total_clustered = fs_clusters["size"].sum()
+check("Total VIRs in clusters (>=3 members)", 2592, int(total_clustered))
+
+# FS_001 fraction of total
+frac_fs001 = fs001["size"] / total_clustered * 100
+check("FS_001 fraction of total VIR family (%)", 46.2, round(frac_fs001,1), tol=0.1)
+
+# Top 10 cluster sum and fraction
+top10 = fs_clusters.sort_values("size", ascending=False).head(10)
+top10_sum = top10["size"].sum()
+check("Top 10 cluster size sum", 2453, int(top10_sum))
+frac_top10 = top10_sum / total_clustered * 100
+check("Top 10 cluster fraction (%)", 94.6, round(frac_top10,1), tol=0.1)
+
+# Sizes of top 10
+expected_sizes = [(1, 1197), (2, 385), (3, 248), (4, 143), (5, 136),
+                  (6, 96),  (7, 85),  (8, 74),  (9, 53),  (10, 36)]
+top10_sorted = top10.sort_values("size", ascending=False).reset_index()
+for i, exp_size in expected_sizes:
+    obs = int(top10_sorted.iloc[i-1]["size"])
+    check(f"FS_{i:03d} size", exp_size, obs)
+
+# Universal clusters (members in all 3 genomes)
+universal = fs_clusters[(fs_clusters["PvP01"]>0)&(fs_clusters["PvW1"]>0)&(fs_clusters["PvPAM"]>0)]
+check("Universal clusters (all 3 genomes)", 21, len(universal))
+
+# Member-weighted fraction in universal
+uni_members = universal["size"].sum()
+frac_uni = uni_members / total_clustered * 100
+check("Members in universal clusters (%)", 97.3, round(frac_uni,1), tol=0.1)
+
+# Plan A: number of MCL clusters
+mcl_clusters = []
+with open(ALN/"../vir_clusters.txt") as f:
+    for line in f:
+        c = line.strip().split()
+        if len(c) >= 3: mcl_clusters.append(c)
+check("Plan A MCL clusters (>=3 members)", 146, len(mcl_clusters))
+
+# How many MCL subfamilies collapse into FS_001?
+# Need to find each MCL cluster and check if any of its members are in FS_001
+fs001_members = set()
+with open(ALN/"foldseek_work/vir_struct_cluster_cluster.tsv") as f:
+    fs001_rep = "PVP01_0007630.1-p1"  # FS_001 rep from earlier check
+    # build rep -> members map
+    rep_members = defaultdict(list)
+    for line in f:
+        rep, mem = line.rstrip().split("\t")
+        rep_members[rep].append(mem)
+fs001_members = set(rep_members[fs001_rep])
+
+mcl_in_fs001 = sum(1 for c in mcl_clusters if any(m in fs001_members for m in c))
+check("MCL subfamilies that collapse into FS_001", 89, mcl_in_fs001)
+
+# ---- 3. Genomic organization ----
+hdr("3. Genomic organization")
+
+# Subtelomeric enrichment: fraction of main-chrom VIRs in outer 10%
+main = main_coords.copy()
+chrom_len = main.groupby(["genome","chrom"])["end"].max().reset_index().rename(columns={"end":"chrom_len"})
+main = main.merge(chrom_len, on=["genome","chrom"])
+main["dist_to_end"] = main[["start","chrom_len"]].apply(
+    lambda r: min(r["start"], r["chrom_len"] - r["start"]), axis=1)
+main["rel_end"] = main["dist_to_end"] / main["chrom_len"]
+
+frac_outer10_overall = (main["rel_end"] < 0.10).mean() * 100
+check("Main-chrom VIRs in outer 10% (overall, %)", 64.5, round(frac_outer10_overall,1), tol=0.5)
+
+for g, exp in [("PvP01",80), ("PvW1",64), ("PvPAM",57)]:
+    frac = (main[main["genome"]==g]["rel_end"] < 0.10).mean() * 100
+    check(f"{g} VIRs in outer 10% (%)", exp, round(frac), tol=2)
+
+# Tandem clustering test: 2/32 significant at p<0.05
+tandem = pd.read_csv(ALN/"spatial/tandem_test_main.tsv", sep="\t")
+n_sig = (tandem["p_tandem"] < 0.05).sum()
+check("Tandem tests significant at p<0.05", 2, int(n_sig))
+check("Total (cluster, genome) tandem tests", 32, len(tandem))
+
+# Spearman correlations across genomes for n_chroms
+synteny = pd.read_csv(ALN/"spatial/synteny_features.tsv", sep="\t")
+from scipy import stats
+pivot = synteny.pivot(index="FS_cluster", columns="genome", values="n_chroms").dropna()
+for c1, c2, exp in [("PvP01","PvW1",0.909), ("PvP01","PvPAM",0.914), ("PvW1","PvPAM",0.915)]:
+    rho, _ = stats.spearmanr(pivot[c1], pivot[c2])
+    check(f"Spearman ρ for n_chroms ({c1} vs {c2})", exp, round(rho,3), tol=0.005)
+
+# FS_001 main-chromosome membership per genome
+fs001_main = main[main["FS_cluster"]=="FS_001"]
+for g, exp in [("PvP01",137), ("PvW1",284), ("PvPAM",320)]:
+    n = (fs001_main["genome"]==g).sum()
+    check(f"FS_001 members on main chromosomes ({g})", exp, int(n))
+
+# FS_001 occupies all 14 main chromosomes in all 3 genomes
+for g in ["PvP01","PvW1","PvPAM"]:
+    n_chr = fs001_main[fs001_main["genome"]==g]["chrom"].nunique()
+    check(f"FS_001 main chromosomes occupied ({g})", 14, int(n_chr))
+
+# ---- 4. Cross-assembly orthology (Plan E) ----
+hdr("4. Cross-assembly orthology")
+
+rbh = pd.read_csv(ALN/"ortho/fs001_rbh.tsv", sep="\t")
+check("FS_001 RBH pairs (PvW1 x PvPAM)", 194, len(rbh))
+
+hk = pd.read_csv(ALN/"ortho/housekeeping_rbh.tsv", sep="\t")
+check("Housekeeping RBH pairs", 5121, len(hk))
+
+# Median identities
+check("FS_001 RBH median identity (%)", 74.5, round(rbh["pident"].median(),1), tol=0.1)
+check("Housekeeping RBH median identity (%)", 99.8, round(hk["pident"].median(),1), tol=0.1)
+
+# Microsynteny score distribution
+syn = pd.read_csv(ALN/"ortho/synteny_scores.tsv", sep="\t")
+syn_dist = syn["synteny_score"].value_counts().sort_index()
+check("FS_001 RBH with synteny score 0", 139, int(syn_dist.get(0,0)))
+check("FS_001 RBH with synteny score >=3", 11, int(syn_dist.get(3,0) + syn_dist.get(4,0)))
+
+# Confidence-class counts
+combined = pd.read_csv(ALN/"ortho/orthologs_combined.tsv", sep="\t")
+conf_counts = combined["confidence"].value_counts()
+check("High-confidence orthologs", 11, int(conf_counts.get("high",0)))
+check("Medium-confidence orthologs", 26, int(conf_counts.get("medium",0)))
+check("Low-confidence orthologs", 157, int(conf_counts.get("low",0)))
+
+# High-confidence median identity
+hi = combined[combined["confidence"]=="high"]
+check("High-confidence median identity (%)", 87, int(round(hi["pident"].median())), tol=2)
+
+# ---- 5. Within-class diversity (Plan C Q2) ----
+hdr("5. Within-class diversity (FS_001 phylogeny)")
+
+# Number of subsampled representatives
+q2_fasta = ALN/"phylo_q2/fs001_subcluster_rep_seq.fasta"
+n_q2 = sum(1 for line in q2_fasta.read_text().splitlines() if line.startswith(">"))
+check("FS_001 sub-representatives at 50% identity", 338, n_q2)
+
+# Per-genome representation
+genome_of = {}
+with open(ALN/"../id_map.txt") as f:
+    for line in f:
+        pid, g = line.rstrip().split("\t")
+        genome_of[pid] = g
+reps = []
+with open(q2_fasta) as f:
+    for line in f:
+        if line.startswith(">"): reps.append(line[1:].split()[0])
+from collections import Counter
+gc = Counter(genome_of.get(r,"?") for r in reps)
+check("Q2 sub-reps from PvP01", 118, gc.get("PvP01",0))
+check("Q2 sub-reps from PvW1", 110, gc.get("PvW1",0))
+check("Q2 sub-reps from PvPAM", 110, gc.get("PvPAM",0))
+
+# IQ-TREE selected model for Q2 AA tree
+iqtree_log = (ALN/"phylo_q2/trees/q2_aa.iqtree").read_text()
+m = re.search(r"Best-fit model according to BIC: ([^\s]+)", iqtree_log)
+selected_model = m.group(1) if m else None
+check("ModelFinder selected AA model (Q2)", "VT+F+R6", selected_model)
+
+# ---- Print verification report ----
+print("=" * 100)
+print()
+print(f"# Verification Report — pvivax_PIR_characterization.pdf\n")
+print(f"Total claims checked: **{len(RESULTS)}**")
+n_pass = sum(1 for r in RESULTS if r["status"]=="PASS")
+n_fail = sum(1 for r in RESULTS if r["status"]=="FAIL")
+n_nodata = sum(1 for r in RESULTS if r["status"]=="NO-DATA")
+print(f"- PASS: **{n_pass}** ({100*n_pass/len(RESULTS):.0f}%)")
+print(f"- FAIL: **{n_fail}**")
+print(f"- NO-DATA: **{n_nodata}**\n")
+
+print("| Status | Claim | Expected | Observed |")
+print("| --- | --- | --- | --- |")
+for r in RESULTS:
+    icon = {"PASS":"✓", "FAIL":"✗", "NO-DATA":"?"}[r["status"]]
+    print(f"| {icon} {r['status']} | {r['label']} | {r['expected']} | {r['observed']} |")
+
+if n_fail > 0:
+    print(f"\n## Failed checks\n")
+    for r in RESULTS:
+        if r["status"]=="FAIL":
+            print(f"- **{r['label']}**: expected {r['expected']}, observed {r['observed']}")

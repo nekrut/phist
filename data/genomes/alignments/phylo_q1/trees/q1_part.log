@@ -1,0 +1,295 @@
+IQ-TREE version 3.1.2 for MacOS ARM 64-bit built May 17 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    Antons-MacBook-Air.local (SSE4.2, 24 GB RAM)
+Command: /Users/anton/.loom/analyses/phist2/.loom/env/bin/iqtree3 -s phylo_q1/reps_combined_auto1.fa -p phylo_q1/trees/partition.nex --prefix phylo_q1/trees/q1_part -mdef phylo_q1/matrices/3DI.nexus -B 1000 --bnni --alrt 1000 -T 8 --safe --seed 42 --redo
+Seed:    42 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed May 27 15:58:18 2026
+Kernel:  Safe SSE2 - 8 threads (10 CPU cores detected)
+
+Reading partition model file phylo_q1/trees/partition.nex ...
+Reading alignment file phylo_q1/reps_combined_auto1.fa ... Fasta format detected
+Reading fasta file: done in 0.00154209 secs using 83.65% CPU
+Alignment most likely contains protein sequences
+Constructing alignment: done in 0.00157094 secs using 68.37% CPU
+Alignment has 70 sequences with 1498 columns, 1492 distinct patterns
+1371 parsimony-informative, 109 singleton sites, 18 constant sites
+                    Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 6.69956e-05 secs using 383.6% CPU
+   1  CAG9472757.1         83.31%    passed     21.66%
+   2  CAG9473019.1         69.69%    failed      0.00%
+   3  CAG9473066.1         85.18%    failed      0.55%
+   4  CAG9474121.1         77.04%    passed     51.14%
+   5  CAG9474541.1         89.32%    failed      0.00%
+   6  CAG9474586.1         79.04%    failed      3.52%
+   7  CAG9474607.1         72.90%    failed      3.06%
+   8  CAG9474685.1         75.70%    failed      0.64%
+   9  CAG9480261.1         22.43%    failed      0.00%
+  10  CAG9481136.1         74.63%    passed      8.97%
+  11  CAG9484345.1         81.84%    failed      0.00%
+  12  CAG9485313.1         82.64%    failed      0.87%
+  13  CAI7717568.1         82.91%    failed      0.61%
+  14  CAI7717830.1         81.58%    failed      0.21%
+  15  CAI7718283.1         81.98%    passed     15.94%
+  16  CAI7718325.1         73.30%    failed      0.71%
+  17  CAI7718708.1         85.18%    failed      0.00%
+  18  CAI7719435.1         80.77%    failed      0.00%
+  19  CAI7719820.1         54.34%    failed      0.00%
+  20  CAI7719882.1         89.85%    failed      0.01%
+  21  CAI7720781.1         85.31%    failed      0.03%
+  22  CAI7720797.1         89.32%    failed      0.00%
+  23  CAI7721738.1         74.10%    failed      2.58%
+  24  CAI7723127.1         71.83%    passed     47.73%
+  25  CAI7723956.1         47.13%    failed      0.08%
+  26  CAI7724076.1         77.57%    failed      0.33%
+  27  CAI7724133.1         88.38%    failed      0.41%
+  28  CAI7724263.1         84.51%    failed      0.43%
+  29  CAI7724292.1         73.43%    failed      0.01%
+  30  PVP01_0001340.1-p1   89.32%    failed      0.00%
+  31  PVP01_0001590.1-p1   54.87%    failed      0.03%
+  32  PVP01_0002950.1-p1   67.42%    failed      0.09%
+  33  PVP01_0004010.1-p1   79.31%    passed     11.20%
+  34  PVP01_0004920.1-p1    9.95%    failed      0.00%
+  35  PVP01_0005540.1-p1   80.24%    failed      3.92%
+  36  PVP01_0005730.1-p1   86.38%    failed      0.00%
+  37  PVP01_0006260.1-p1   82.11%    passed      7.78%
+  38  PVP01_0006340.1-p1   82.91%    failed      0.23%
+  39  PVP01_0006660.1-p1   70.63%    failed      0.02%
+  40  PVP01_0007300.1-p1   70.23%    failed      0.00%
+  41  PVP01_0007630.1-p1   59.41%    failed      0.00%
+  42  PVP01_0007790.1-p1   92.12%    failed      0.11%
+  43  PVP01_0007800.1-p1   64.22%    failed      0.00%
+  44  PVP01_0008030.1-p1   63.15%    passed     27.55%
+  45  PVP01_0008100.1-p1   58.74%    failed      0.00%
+  46  PVP01_0008290.1-p1   74.23%    failed      0.00%
+  47  PVP01_0009200.1-p1   72.76%    passed      7.89%
+  48  PVP01_0009520.1-p1   83.04%    failed      0.00%
+  49  PVP01_0009530.1-p1   75.17%    failed      0.00%
+  50  PVP01_0009850.1-p1   54.27%    failed      0.06%
+  51  PVP01_0010120.1-p1   76.90%    failed      1.86%
+  52  PVP01_0010600.1-p1   90.12%    passed     49.58%
+  53  PVP01_0010700.1-p1   89.72%    failed      0.05%
+  54  PVP01_0010720.1-p1   73.70%    passed      6.58%
+  55  PVP01_0010820.1-p1   91.46%    passed     26.76%
+  56  PVP01_0010880.1-p1   53.54%    failed      0.00%
+  57  PVP01_0010940.1-p1   77.04%    passed     27.71%
+  58  PVP01_0010980.1-p1   63.42%    failed      0.00%
+  59  PVP01_0100200.1-p1   32.84%    failed      0.00%
+  60  PVP01_0201500.1-p1   46.86%    failed      0.00%
+  61  PVP01_0401900.1-p1   70.89%    failed      0.13%
+  62  PVP01_0403800.1-p1   50.60%    failed      0.00%
+  63  PVP01_0840750.1-p1   78.91%    failed      2.03%
+  64  PVP01_0903400.1-p1   68.89%    failed      0.00%
+  65  PVP01_1149200.1-p1   89.72%    failed      0.00%
+  66  PVP01_1149500.1-p1   44.59%    failed      0.00%
+  67  PVP01_1200200.1-p1   68.36%    passed     46.21%
+  68  PVP01_1274100.1-p1   75.30%    failed      0.00%
+  69  PVP01_1347400.1-p1   31.78%    failed      0.00%
+  70  PVP01_1472800.1-p1   84.51%    failed      0.00%
+WARNING: 63 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                72.07%  56 sequences failed composition chi2 test (p-value<5%; df=19)
+
+Loading 2 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1	AA	70	749	711	7	VT+F+G4	AA
+2		70	749	660	11	3DI+G	3DI
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions and number of threads is changed to 2
+
+Note: For long partitions, you can use --parallel-over-sites option to force
+      multi-threading strategy over alignment sites and utilise all the threads.
+      However, parallelisation over sites will have adverse effect on short partitions.
+Reading model definition file phylo_q1/matrices/3DI.nexus ... 91 models and 214 frequency vectors loaded
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.020 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 42)...
+
+NOTE: 72 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -62694.664
+Current log-likelihood at step 1: -57774.370
+Current log-likelihood at step 2: -57555.733
+Current log-likelihood at step 3: -57164.637
+Current log-likelihood at step 4: -56683.054
+Current log-likelihood at step 5: -56567.323
+Current log-likelihood at step 6: -56563.318
+Current log-likelihood at step 7: -56563.048
+Current log-likelihood at step 8: -56563.016
+Partition-specific rates:  1.700 0.300
+Parameters optimization took 7 rounds (5.121 sec)
+
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.000109911 secs using 394% CPU
+Computing ML distances took 0.000177 sec (of wall-clock time) 0.000468 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 9.60827e-05 secs using 155.1% CPU
+Constructing RapidNJ tree: done in 0.00455809 secs using 48.97% CPU
+Computing RapidNJ tree took 0.004676 sec (of wall-clock time) 0.002397 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -61047.236
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 1.841 second
+Computing log-likelihood of 98 initial trees ... 10.377 seconds
+Current best score: -56563.016
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56341.299
+Current log-likelihood at step 1: -56340.319
+Current log-likelihood at step 2: -56339.825
+Current log-likelihood at step 3: -56339.733
+Parameters optimization took 2 rounds (1.231 sec)
+
+BETTER TREE FOUND at iteration 1: -56339.733
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56296.572
+Current log-likelihood at step 1: -56296.361
+Current log-likelihood at step 2: -56296.325
+Parameters optimization took 1 rounds (0.726 sec)
+
+BETTER TREE FOUND at iteration 2: -56296.325
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56279.506
+Current log-likelihood at step 1: -56279.450
+Parameters optimization took 0 rounds (0.448 sec)
+
+BETTER TREE FOUND at iteration 8: -56279.450
+Iteration 10 / LogL: -56310.255 / Time: 0h:1m:0s
+Iteration 20 / LogL: -56386.890 / Time: 0h:1m:42s
+Finish initializing candidate tree set (20)
+Current best tree score: -56279.450 / CPU time: 95.056
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56278.783
+Current log-likelihood at step 1: -56278.558
+Current log-likelihood at step 2: -56278.534
+Parameters optimization took 1 rounds (0.618 sec)
+
+BETTER TREE FOUND at iteration 29: -56278.534
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56278.453
+Current log-likelihood at step 1: -56278.452
+Parameters optimization took 0 rounds (0.263 sec)
+
+BETTER TREE FOUND at iteration 30: -56278.452
+Iteration 30 / LogL: -56278.452 / Time: 0h:2m:10s (0h:7m:28s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56274.493
+Current log-likelihood at step 1: -56274.297
+Current log-likelihood at step 2: -56274.256
+Parameters optimization took 1 rounds (0.644 sec)
+
+BETTER TREE FOUND at iteration 36: -56274.256
+Iteration 40 / LogL: -56294.695 / Time: 0h:2m:38s (0h:6m:29s left)
+Iteration 50 / LogL: -56285.700 / Time: 0h:3m:8s (0h:5m:30s left)
+Iteration 60 / LogL: -56278.831 / Time: 0h:3m:36s (0h:4m:38s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56274.229
+Current log-likelihood at step 1: -56274.210
+Parameters optimization took 0 rounds (0.270 sec)
+
+UPDATE BEST LOG-LIKELIHOOD: -56274.210
+Iteration 70 / LogL: -56315.050 / Time: 0h:4m:2s (0h:3m:51s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56271.531
+Current log-likelihood at step 1: -56271.464
+Parameters optimization took 0 rounds (0.290 sec)
+
+BETTER TREE FOUND at iteration 73: -56271.464
+Iteration 80 / LogL: -56271.974 / Time: 0h:18m:6s (0h:21m:19s left)
+Iteration 90 / LogL: -56274.444 / Time: 0h:18m:27s (0h:17m:12s left)
+Iteration 100 / LogL: -56275.063 / Time: 0h:18m:50s (0h:13m:53s left)
+Iteration 110 / LogL: -56275.528 / Time: 0h:19m:10s (0h:11m:5s left)
+Iteration 120 / LogL: -56271.629 / Time: 0h:19m:34s (0h:8m:43s left)
+Iteration 130 / LogL: -56271.502 / Time: 0h:19m:57s (0h:6m:39s left)
+Iteration 140 / LogL: -56279.427 / Time: 0h:20m:20s (0h:4m:49s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56264.579
+Current log-likelihood at step 1: -56264.168
+Current log-likelihood at step 2: -56264.140
+Parameters optimization took 1 rounds (0.614 sec)
+
+BETTER TREE FOUND at iteration 148: -56264.140
+Iteration 150 / LogL: -56271.543 / Time: 0h:20m:45s (0h:13m:39s left)
+Iteration 160 / LogL: -56271.238 / Time: 0h:21m:8s (0h:11m:42s left)
+Iteration 170 / LogL: -56269.405 / Time: 0h:21m:32s (0h:9m:56s left)
+Iteration 180 / LogL: -56272.187 / Time: 0h:21m:53s (0h:8m:18s left)
+Iteration 190 / LogL: -56264.451 / Time: 0h:22m:16s (0h:6m:50s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -56264.096
+Current log-likelihood at step 1: -56264.054
+Parameters optimization took 0 rounds (0.276 sec)
+
+UPDATE BEST LOG-LIKELIHOOD: -56264.054
+Iteration 200 / LogL: -56264.651 / Time: 0h:22m:42s (0h:5m:28s left)
+Iteration 210 / LogL: -56274.335 / Time: 0h:23m:6s (0h:4m:12s left)
+Iteration 220 / LogL: -56264.376 / Time: 0h:23m:31s (0h:3m:0s left)
+Iteration 230 / LogL: -56264.628 / Time: 0h:23m:56s (0h:1m:52s left)
+Iteration 240 / LogL: -56264.206 / Time: 0h:24m:20s (0h:0m:48s left)
+Refining ufboot trees with NNI 5 branches...
+Reading model definition file phylo_q1/matrices/3DI.nexus ... 91 models and 214 frequency vectors loaded
+100 samples done
+200 samples done
+300 samples done
+400 samples done
+500 samples done
+600 samples done
+700 samples done
+800 samples done
+900 samples done
+1000 samples done
+Total 1000 ufboot trees refined
+TREE SEARCH COMPLETED AFTER 249 ITERATIONS / Time: 1h:13m:6s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -56264.054
+Current log-likelihood at step 1: -56264.021
+Current log-likelihood at step 2: -56264.012
+Partition-specific rates:  1.702 0.298
+Parameters optimization took 1 rounds (1.100 sec)
+
+Partition information was printed to phylo_q1/trees/q1_part.best_model.nex
+BEST SCORE FOUND : -56264.012
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+1.088 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file phylo_q1/trees/q1_part.splits.nex
+Total tree length: 60.928
+
+Total number of iterations: 249
+CPU time used for tree search: 3244.875 sec (0h:54m:4s)
+Wall-clock time used for tree search: 4378.214 sec (1h:12m:58s)
+Total CPU time used: 3263.758 sec (0h:54m:23s)
+Total wall-clock time used: 4388.508 sec (1h:13m:8s)
+UFBoot trees printed to phylo_q1/trees/q1_part.ufboot
+
+Computing bootstrap consensus tree...
+Reading input file phylo_q1/trees/q1_part.splits.nex...
+70 taxa and 868 splits.
+Consensus tree written to phylo_q1/trees/q1_part.contree
+Reading input trees file phylo_q1/trees/q1_part.contree
+Log-likelihood of consensus tree: -56264.210
+
+Analysis results written to: 
+  IQ-TREE report:                phylo_q1/trees/q1_part.iqtree
+  Maximum-likelihood tree:       phylo_q1/trees/q1_part.treefile
+  Likelihood distances:          phylo_q1/trees/q1_part.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          phylo_q1/trees/q1_part.splits.nex
+  Consensus tree:                phylo_q1/trees/q1_part.contree
+  UFBoot trees:                  phylo_q1/trees/q1_part.ufboot
+  Screen log file:               phylo_q1/trees/q1_part.log
+
+Date and Time: Wed May 27 17:11:28 2026

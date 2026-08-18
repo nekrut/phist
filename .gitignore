@@ -1,0 +1,39 @@
+# Large inputs / regenerable artifacts deliberately kept out of the repo.
+# See docs/EXCLUDED_DATA.md for what was dropped and how to regenerate or refetch it.
+
+# Conda environment shipped with the loom analysis (1.9 GB)
+.loom/
+
+# Reference downloads (re-fetchable from Pfam / PlasmoDB)
+data/hmm/Pfam-A.hmm
+data/genomes/nuc/
+data/pseudogenes/galaxy_input_*_genome.fasta
+
+# ProstT5 model weights + download scratch (4.4 GB)
+data/genomes/alignments/prostt5_weights/
+data/genomes/alignments/tmp_prostt5/
+
+# Vendored third-party checkout
+data/genomes/alignments/AlignmentViewer2.0/
+
+# MMseqs2 / Foldseek binary databases and scratch dirs (regenerable)
+*.db
+*.db.*
+*.db_h
+*.db_h.*
+mmseqs_tmp/
+mm_tmp/
+tmp_hk/
+**/foldseek_work/tmp/
+**/foldmason_work/
+**/struct_msa/
+
+# IQ-TREE bootstrap replicate dumps and checkpoints (regenerable, ~50 MB each)
+*.ufboot
+*.ckp.gz
+
+# Raw sequencing reads (fetch from Zenodo 5119008)
+smbe-a/zenodo_5119008_fastq/
+
+# OS noise
+.DS_Store

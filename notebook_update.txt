@@ -1,0 +1,34 @@
+## Plan A: Network-Based Classification of *P. vivax* VIR Subfamilies [local]
+
+Extract, cluster, and classify the highly expanded VIR/PIR multigene family across the three modern long-read *P. vivax* genomes (PvP01, PvW1, PvPAM). Instead of forcing classification against the fragmented Salvador-I reference, we will use an all-vs-all sequence comparison and Markov Clustering (MCL) to define subfamilies *de novo* and assess geographic diversity.
+
+### Steps
+
+- [ ] 1. **Fetch reference genomes and annotations** {#plan-a-step-1} — Download FASTA and GFF3 files for PvP01, PvW1, and PvPAM from PlasmoDB/NCBI
+  - Routing: local
+  - Tool: wget/curl
+  - Verification: confirm FASTA and GFF3 files are downloaded and non-empty
+- [ ] 2. **Extract VIR protein sequences** {#plan-a-step-2} — Parse GFF3/FASTA to isolate sequences annotated as PIR/VIR into a single combined FASTA file
+  - Routing: local
+  - Tool: seqkit / custom python script
+  - Verification: confirm the combined FASTA contains ~3,300 sequences (sum of expected VIR counts)
+- [ ] 3. **All-vs-all homology search** {#plan-a-step-3} — Run MMseqs2 easy-search/easy-cluster to generate a comprehensive sequence similarity network
+  - Routing: local
+  - Tool: mmseqs2
+  - Verification: confirm output TSV contains pairwise alignment scores for the combined VIR pool
+- [ ] 4. **Markov Clustering (MCL)** {#plan-a-step-4} — Apply MCL to the MMseqs2 similarity matrix to define robust VIR subfamilies
+  - Routing: local
+  - Tool: mcl
+  - Verification: confirm cluster output file exists and groups proteins into distinct sub-clusters
+- [ ] 5. **Distribution analysis and mapping** {#plan-a-step-5} — Tabulate the number of genes from each genome (PvP01, PvW1, PvPAM) belonging to each defined cluster
+  - Routing: local
+  - Tool: python / pandas
+  - Verification: confirm generation of a summary table/plot showing universal vs. continent-specific VIR subfamilies
+
+### Parameters
+
+| Step | Tool | Parameter | Default | Value | Description |
+| --- | --- | --- | --- | --- | --- |
+| 3   | mmseqs | --min-seq-id | 0.0 | 0.40 | Minimum sequence identity for homology |
+| 3   | mmseqs | -c | 0.0 | 0.50 | Minimum alignment coverage |
+| 4   | mcl | -I | 2.0 | 2.5 | Inflation parameter (higher = tighter subfamilies) |

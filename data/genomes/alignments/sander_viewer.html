@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>P. vivax VIR Subfamilies (Sander Lab Viewer)</title>
+  <!-- Load React -->
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  
+  <!-- Load AlignmentViewer -->
+  <script src="https://cdn.jsdelivr.net/npm/alignment-viewer-2.0@2.3.1/dist/alignment-viewer.js"></script>
+
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 20px; background: #f0f2f5; }
+    #header { margin-bottom: 20px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    #root { background: white; height: 80vh; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden; }
+    select { padding: 8px; margin-left: 10px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <div id="header">
+    <h2>P. vivax VIR Subfamily Alignments (Sander Lab)</h2>
+    <label><strong>Select Subfamily:</strong></label>
+    <select id="cluster-select" onchange="loadAlignment()">
+        <option value="Subfamily_1.aln">Subfamily 1 (191 seqs)</option>
+        <option value="Subfamily_2.aln">Subfamily 2 (182 seqs)</option>
+        <option value="Subfamily_3.aln">Subfamily 3 (161 seqs)</option>
+        <option value="Subfamily_4.aln">Subfamily 4 (126 seqs)</option>
+        <option value="Subfamily_5.aln">Subfamily 5 (118 seqs)</option>
+        <option value="Subfamily_6.aln">Subfamily 6 (101 seqs)</option>
+        <option value="Subfamily_7.aln">Subfamily 7 (73 seqs)</option>
+        <option value="Subfamily_8.aln">Subfamily 8 (72 seqs)</option>
+        <option value="Subfamily_9.aln">Subfamily 9 (70 seqs)</option>
+        <option value="Subfamily_10.aln">Subfamily 10 (55 seqs)</option>
+    </select>
+  </div>
+
+  <div id="root"></div>
+
+  <script>
+    function loadAlignment() {
+      var file = document.getElementById("cluster-select").value;
+      
+      fetch(file + '?t=' + new Date().getTime())
+        .then(response => response.text())
+        .then(data => {
+            // Unmount any previous instance
+            ReactDOM.unmountComponentAtNode(document.getElementById("root"));
+            
+            // Render the Sander Lab AlignmentViewer
+            ReactDOM.render(
+              React.createElement(AlignmentViewer, {
+                data: data,
+                colors: "clustal",
+                showLogo: true,
+                showMetaData: false
+              }),
+              document.getElementById("root")
+            );
+        })
+        .catch(err => console.error("Failed to fetch alignment:", err));
+    }
+
+    window.onload = loadAlignment;
+  </script>
+
+</body>
+</html>

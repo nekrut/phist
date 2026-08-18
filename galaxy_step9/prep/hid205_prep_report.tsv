@@ -1,0 +1,9 @@
+metric	value
+sequence_count	336
+aa_input_columns	10128
+threedi_input_columns	10128
+gap_threshold	0.65
+aa_trimmed_columns	0
+threedi_trimmed_columns	0
+combined_columns	0
+id_order	sorted_by_sequence_id

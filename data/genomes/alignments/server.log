@@ -1,0 +1,18 @@
+::1 - - [27/May/2026 11:17:57] "GET /viewer.html HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:17:57] "GET /Subfamily_1.aln HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:17:58] code 404, message File not found
+::1 - - [27/May/2026 11:17:58] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [27/May/2026 11:18:02] "GET /Subfamily_2.aln HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:27:21] "GET /viewer.html HTTP/1.1" 304 -
+::1 - - [27/May/2026 11:27:21] "GET /Subfamily_1.aln HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:27:26] "GET /Subfamily_2.aln HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:29:57] "GET /viewer.html HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:29:57] "GET /Subfamily_1.aln?t=1779895797579 HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:31:16] "GET /viewer.html HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:31:17] "GET /Subfamily_1.aln?t=1779895877326 HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:32:29] "GET /viewer.html HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:32:29] "GET /Subfamily_1.aln?t=1779895949535 HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:35:14] "GET /Subfamily_2.aln?t=1779896114266 HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:35:52] "GET /sander_viewer.html HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:35:52] "GET /Subfamily_1.aln?t=1779896152648 HTTP/1.1" 200 -
+::1 - - [27/May/2026 11:35:59] "GET /Subfamily_3.aln?t=1779896159083 HTTP/1.1" 200 -

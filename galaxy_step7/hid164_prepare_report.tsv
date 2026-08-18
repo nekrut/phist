@@ -1,0 +1,11 @@
+metric	count
+input_fs001_total	812
+fs001_PvW1	234
+fs001_PvPAM	306
+fs001_other	272
+PvW1_proteome_total	6075
+PvW1_vir_ids	748
+PvW1_nonvir	5327
+PvPAM_proteome_total	6462
+PvPAM_vir_ids	985
+PvPAM_nonvir	5477

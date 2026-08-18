@@ -1,0 +1,6 @@
+#nexus
+begin sets;
+    charset AA = 1-247;
+    charset 3DI = 248-494;
+    charpartition allpart = VT+F+R6:AA, 3DI+G:3DI;
+end;

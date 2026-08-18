@@ -1,0 +1,12 @@
+You are an expert computational biologist specializing in Plasmodium genomics and multigene families. 
+
+Review the following proposed plan to classify PIR/VIR genes from three modern P. vivax assemblies (PvP01, PvW1, PvPAM) into the 12 classical subfamilies (A-L). 
+
+Proposed Plan:
+1. Download Proteomes: Fetch the predicted protein sequences (FASTA) for PvP01, PvW1, and PvPAM.
+2. Filter for PIR/VIR Proteins: Extract only the sequences annotated as PIR or VIR from each proteome.
+3. Reference Set Preparation: Obtain a curated set of P. vivax VIR proteins already classified into the 12 subfamilies (A-L) from the Salvador-I reference.
+4. Subfamily Classification: Run a sequence homology search (like BLASTp or MMseqs2) of the extracted PIR/VIR proteins against the reference set. Assign each protein to a subfamily based on the best hit.
+5. Distribution Analysis: Count and tabulate the results.
+
+Critique this approach. Identify potential pitfalls, biases, or technical limitations specifically related to the nature of the PIR/VIR family, the use of Salvador-I as a reference, and the BLAST-based assignment method. Suggest improvements or alternative methodologies that would yield a more robust classification.

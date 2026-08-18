@@ -1,0 +1,11 @@
+UDT variant: cpu-32-new-schema
+Foldseek command GPU flag: --gpu 0
+Requested threads input: 32
+GALAXY_SLOTS: 32
+CUDA_VISIBLE_DEVICES: 
+NVIDIA_VISIBLE_DEVICES: 
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Foldseek version:
+10.941cd33
+nvidia-smi:
+/jetstream2/scratch/main/jobs/78066692/tool_script.sh: line 39: nvidia-smi: command not found

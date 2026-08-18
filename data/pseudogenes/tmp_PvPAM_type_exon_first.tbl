@@ -1,0 +1,92 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+PVPAM_000037200_t1_frame+0 -          Plasmodium_Vir       PF05795.17  7.3e-189  624.8  43.1   1.9e-79  264.7   2.9   4.0   4   0   0   4   4   4   4 -
+PVPAM_000038500_t1_frame+0 -          Plasmodium_Vir       PF05795.17  2.1e-171  567.4   8.2   6.2e-86  286.1   1.4   2.1   2   0   0   2   2   2   2 -
+PVPAM_000017200_t1_frame+0 -          Plasmodium_Vir       PF05795.17  5.7e-153  506.7  61.8   8.1e-77  256.1  26.9   2.6   2   2   0   2   2   2   2 -
+PVPAM_060036000_t1_frame+0 -          Plasmodium_Vir       PF05795.17  1.1e-137  456.4  59.8   4.8e-50  167.9   7.4   5.9   2   2   2   4   4   4   4 -
+PVPAM_040036800_t1_frame+0 -          Plasmodium_Vir       PF05795.17  1.3e-124  413.4  26.9   5.3e-63  210.6   9.4   2.0   2   0   0   2   2   2   2 -
+PVPAM_000041000_t1_frame+0 -          Plasmodium_Vir       PF05795.17  7.8e-122  404.2  27.5   1.4e-61  206.0  10.1   2.0   1   1   1   2   2   2   2 -
+PVPAM_000010300_t1_frame+0 -          Plasmodium_Vir       PF05795.17  3.6e-120  398.7  55.8   2.1e-43  146.1  10.6   4.1   4   0   0   4   4   4   4 -
+PVPAM_040039000_t1_frame+0 -          Plasmodium_Vir       PF05795.17  3.4e-119  395.5  69.2   3.9e-51  171.5  21.1   4.1   3   1   1   4   4   4   4 -
+PVPAM_110069000_t1_frame+0 -          Plasmodium_Vir       PF05795.17  3.2e-114  379.2  66.4   1.5e-55  186.1  29.2   5.6   2   2   0   2   2   2   2 -
+PVPAM_110069900_t1_frame+0 -          Plasmodium_Vir       PF05795.17  6.9e-113  374.8  41.1   6.8e-48  160.9  12.2   4.1   1   1   3   4   4   4   4 -
+PVPAM_000008800_t1_frame+0 -          Plasmodium_Vir       PF05795.17  2.6e-107  356.4  57.2   1.5e-44  149.9  16.8   4.3   4   0   0   4   4   4   4 -
+PVPAM_060038100_t1_frame+0 -          Plasmodium_Vir       PF05795.17    2e-101  337.1  68.7   2.4e-50  168.9  30.3   4.6   2   2   0   2   2   2   2 -
+PVPAM_080005400_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.8e-99  330.6  56.3   4.6e-42  141.7  11.8   4.2   3   1   1   4   4   4   4 -
+PVPAM_110053200_t1_frame+0 -          Plasmodium_Vir       PF05795.17   3.6e-99  329.6  59.7   2.1e-51  172.4  25.9   4.1   4   2   0   4   4   2   2 -
+PVPAM_080007400_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.4e-94  314.5  74.8   3.8e-49  165.0  28.5   2.3   2   1   0   2   2   2   2 -
+PVPAM_040006400_t1_frame+0 -          Plasmodium_Vir       PF05795.17   5.1e-91  302.8  63.5   1.6e-40  136.6  22.7   4.1   4   0   0   4   4   4   4 -
+PVPAM_060035800_t1_frame+0 -          Plasmodium_Vir       PF05795.17   4.4e-87  289.8  85.3   3.3e-43  145.5  38.0   3.7   2   2   0   2   2   2   2 -
+PVPAM_080007500_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.3e-85  285.0  38.3   9.7e-44  147.2  14.9   2.1   2   0   0   2   2   2   2 -
+PVPAM_010011000_t1_frame+0 -          Plasmodium_Vir       PF05795.17   9.1e-81  269.1  52.3     9e-41  137.4  22.2   2.3   2   0   0   2   2   2   2 -
+PVPAM_060009000_t1_frame+0 -          Plasmodium_Vir       PF05795.17   6.4e-80  266.3  45.1   6.1e-40  134.7  18.6   3.5   2   2   0   2   2   2   2 -
+PVPAM_010012500_t1_frame+0 -          Plasmodium_Vir       PF05795.17   2.8e-69  231.2  88.1   1.2e-36  123.9  33.9   2.9   2   1   1   3   3   3   2 -
+PVPAM_110067200_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.4e-67  225.6  36.5   2.7e-34  116.1  14.0   2.2   2   0   0   2   2   2   2 -
+PVPAM_040010200_t1_frame+0 -          Plasmodium_Vir       PF05795.17   3.8e-67  224.2  94.4     2e-32  109.9  43.2   4.6   2   2   0   2   2   2   2 -
+PVPAM_090054100_t1_frame+0 -          Plasmodium_Vir       PF05795.17   6.7e-63  210.3  45.2   3.3e-32  109.2  18.6   2.1   1   1   1   2   2   2   2 -
+PVPAM_110062700_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.8e-61  205.6  72.2   1.3e-31  107.2  30.8   2.1   2   0   0   2   2   2   2 -
+PVPAM_110053700_t1_frame+0 -          Plasmodium_Vir       PF05795.17   4.5e-58  194.4  73.1   1.4e-29  100.6  32.3   2.1   2   0   0   2   2   2   2 -
+PVPAM_040008300_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.1e-57  193.1  57.6   1.3e-28   97.4  24.8   3.6   2   2   0   2   2   2   2 -
+PVPAM_000031300_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.8e-56  189.1  20.3   4.5e-15   52.8   5.5   3.9   4   0   0   4   4   4   4 -
+PVPAM_000006200_t1_frame+0 -          Plasmodium_Vir       PF05795.17   7.3e-49  164.1  66.4   3.7e-25   86.0  28.4   2.1   2   0   0   2   2   2   2 -
+PVPAM_130014800_t1_frame+0 -          Plasmodium_Vir       PF05795.17   8.1e-47  157.3  73.7   7.5e-26   88.3  26.0   2.5   2   1   1   3   3   3   2 -
+PVPAM_060009100_t1_frame+0 -          Plasmodium_Vir       PF05795.17   7.5e-43  144.3  76.3   4.3e-21   72.6  34.3   3.7   1   1   1   2   2   2   2 -
+PVPAM_130011900_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.2e-42  143.6  57.0   5.7e-22   75.5  23.9   2.2   2   0   0   2   2   2   2 -
+PVPAM_010012200_t1_frame+2 -          Plasmodium_Vir       PF05795.17   9.3e-41  137.4  34.8   5.2e-20   69.1  13.1   3.9   2   2   0   2   2   2   2 -
+PVPAM_000040600_t1_frame+0 -          Plasmodium_Vir       PF05795.17   2.7e-36  122.7  57.7   1.6e-20   70.8  41.7   4.2   4   0   0   4   4   4   4 -
+PVPAM_000017400_t1_frame+0 -          Plasmodium_Vir       PF05795.17     2e-35  119.8  49.8   4.3e-18   62.8  20.9   2.2   2   0   0   2   2   2   2 -
+PVPAM_040037300_t1_frame+1 -          Plasmodium_Vir       PF05795.17   5.1e-33  111.9  16.3   6.5e-17   58.9   4.2   2.1   2   0   0   2   2   2   2 -
+PVPAM_080011700_t1_frame+2 -          Plasmodium_Vir       PF05795.17   6.1e-32  108.4  81.0   6.4e-12   42.5  12.1   3.3   3   0   0   3   3   3   3 -
+PVPAM_000038500_t1_frame+2 -          Plasmodium_Vir       PF05795.17   7.3e-31  104.8  19.5   1.4e-16   57.8   3.7   2.2   2   0   0   2   2   2   2 -
+PVPAM_010007600_t1_frame+0 -          Plasmodium_Vir       PF05795.17   3.5e-28   96.0  84.0   3.1e-13   46.8  34.4   4.2   4   0   0   4   4   4   2 -
+PVPAM_110055400_t1_frame+1 -          Plasmodium_Vir       PF05795.17   4.8e-28   95.5  75.0   2.7e-14   50.3  31.7   3.3   1   1   1   2   2   2   2 -
+PVPAM_040039000_t1_frame+1 -          Plasmodium_Vir       PF05795.17   2.4e-27   93.2  13.5   9.1e-15   51.8   2.3   2.2   2   0   0   2   2   2   2 -
+PVPAM_080005400_t1_frame+2 -          Plasmodium_Vir       PF05795.17   6.9e-27   91.7  23.0   5.4e-15   52.6   8.0   2.1   2   0   0   2   2   2   2 -
+PVPAM_040037300_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.4e-24   84.1   0.0   1.4e-11   41.3   0.0   2.1   2   0   0   2   2   2   2 -
+PVPAM_080007400_t1_frame+2 -          Plasmodium_Vir       PF05795.17     3e-20   69.9   4.4     5e-10   36.2   0.8   2.4   2   0   0   2   2   2   2 -
+PVPAM_030005500_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.8e-19   67.3  82.9   4.1e-10   36.5  37.4   2.2   2   0   0   2   2   2   2 -
+PVPAM_080011700_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.8e-18   64.0 132.9   3.3e-12   43.4  11.2   5.2   3   3   1   4   4   4   3 -
+PVPAM_060041500_t1_frame+0 -          Plasmodium_Vir       PF05795.17   7.1e-18   62.1  95.0   2.4e-09   34.0  43.5   2.1   2   0   0   2   2   2   2 -
+PVPAM_100007000_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.7e-17   60.8  89.4   0.00034   17.1   0.1   5.5   4   2   0   4   4   4   4 -
+PVPAM_000024700_t1_frame+0 -          Plasmodium_Vir       PF05795.17   9.9e-17   58.3  52.7   8.1e-09   32.2  22.0   2.4   2   0   0   2   2   2   2 -
+PVPAM_000038700_t1_frame+0 -          Plasmodium_Vir       PF05795.17   4.2e-16   56.2  50.1   4.3e-07   26.6  18.2   3.2   1   1   2   3   3   3   3 -
+PVPAM_120078400_t1_frame+2 -          Plasmodium_Vir       PF05795.17   1.6e-14   51.0   8.1   1.1e-07   28.5   1.6   2.2   1   1   1   2   2   2   2 -
+PVPAM_060038000_t1_frame+0 -          Plasmodium_Vir       PF05795.17   6.1e-14   49.1  71.2   1.5e-07   28.1  37.8   2.1   2   0   0   2   2   2   2 -
+PVPAM_140005500_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.2e-13   48.1  16.0     1e-07   28.6   3.8   2.2   2   0   0   2   2   2   2 -
+PVPAM_080007100_t1_frame+0 -          Plasmodium_Vir       PF05795.17   3.6e-13   46.6  29.4   8.6e-05   19.0   0.2   4.1   4   0   0   4   4   4   4 -
+PVPAM_000010300_t1_frame+2 -          Plasmodium_Vir       PF05795.17   6.5e-13   45.7   2.0   1.1e-12   45.0   2.0   1.2   1   0   0   1   1   1   1 -
+PVPAM_000028700_t1_frame+1 -          Plasmodium_Vir       PF05795.17   6.8e-13   45.7   9.0   5.2e-07   26.3   4.2   2.1   2   0   0   2   2   2   2 -
+PVPAM_110056600_t1_frame+0 -          Plasmodium_Vir       PF05795.17   2.7e-12   43.7  97.1   1.1e-05   22.0  29.9   7.7   4   2   2   6   6   6   2 -
+PVPAM_010033300_t1_frame+1 -          Plasmodium_Vir       PF05795.17   6.3e-12   42.5  12.2   2.1e-06   24.3   1.2   2.1   2   0   0   2   2   2   2 -
+PVPAM_010033300_t1_frame+0 -          Plasmodium_Vir       PF05795.17   1.7e-11   41.1  46.5   4.6e-06   23.2  18.7   3.2   2   2   0   2   2   2   2 -
+PVPAM_110067200_t1_frame+1 -          Plasmodium_Vir       PF05795.17   4.2e-11   39.8   1.8   3.6e-06   23.6   0.2   2.1   2   0   0   2   2   2   2 -
+PVPAM_080007500_t1_frame+1 -          Plasmodium_Vir       PF05795.17   6.2e-10   35.9   6.2   3.3e-06   23.7   1.0   2.2   2   0   0   2   2   2   2 -
+PVPAM_000040600_t1_frame+2 -          Plasmodium_Vir       PF05795.17     8e-10   35.6  24.9   1.2e-09   35.0  24.9   1.1   1   0   0   1   1   1   1 -
+PVPAM_080006200_t1_frame+1 -          Plasmodium_Vir       PF05795.17   2.2e-09   34.1  78.9   1.7e-07   27.9   1.9   3.1   2   1   1   3   3   3   2 -
+PVPAM_010010700_t1_frame+1 -          Plasmodium_Vir       PF05795.17   1.9e-08   31.0  41.8   0.00013   18.4   4.6   5.0   4   2   0   4   4   4   2 -
+PVPAM_020027600_t1_frame+2 -          Plasmodium_Vir       PF05795.17   4.2e-08   29.9  41.9   0.00015   18.2   4.6   4.8   4   2   0   4   4   4   2 -
+PVPAM_050007000_t1_frame+0 -          Plasmodium_Vir       PF05795.17   8.6e-08   28.9  86.1   0.00034   17.0  39.0   2.5   2   0   0   2   2   2   2 -
+PVPAM_080007600_t1_frame+1 -          Plasmodium_Vir       PF05795.17   1.8e-07   27.8  64.1   1.9e-07   27.7   2.4   3.1   3   0   0   3   3   3   1 -
+PVPAM_140005500_t1_frame+2 -          Plasmodium_Vir       PF05795.17   3.2e-07   27.0   2.7    0.0033   13.8   0.1   2.1   2   0   0   2   2   2   2 -
+PVPAM_040037700_t1_frame+1 -          Plasmodium_Vir       PF05795.17     5e-07   26.4  28.3   4.9e-05   19.8   0.6   3.8   2   1   1   3   3   2   2 -
+PVPAM_000024100_t1_frame+0 -          Plasmodium_Vir       PF05795.17   2.5e-06   24.1  24.5   6.1e-05   19.5   4.9   2.3   3   0   0   3   3   2   2 -
+PVPAM_000024100_t1_frame+2 -          Plasmodium_Vir       PF05795.17   2.9e-06   23.9   4.5     0.004   13.5   0.7   2.1   2   0   0   2   2   2   2 -
+PVPAM_020008200_t1_frame+0 -          Plasmodium_Vir       PF05795.17   8.6e-06   22.3  70.6   0.00013   18.4  31.3   3.9   2   2   1   4   4   4   2 -
+PVPAM_000009700_t1_frame+0 -          Plasmodium_Vir       PF05795.17   3.4e-05   20.3 114.9    0.0015   15.0  41.1   5.6   4   2   0   4   4   4   2 -
+PVPAM_010012500_t1_frame+1 -          Plasmodium_Vir       PF05795.17   4.4e-05   19.9  13.4     0.002   14.5   2.6   2.4   2   0   0   2   2   2   2 -
+PVPAM_000022300_t1_frame+0 -          Plasmodium_Vir       PF05795.17   9.3e-05   18.9  88.5    0.0088   12.4  40.1   2.3   2   0   0   2   2   2   2 -
+PVPAM_000033400_t1_frame+0 -          Plasmodium_Vir       PF05795.17   0.00042   16.7  62.8      0.02   11.2  27.3   2.3   2   0   0   2   2   2   2 -
+PVPAM_040037700_t1_frame+0 -          Plasmodium_Vir       PF05795.17   0.00059   16.2  11.0   0.00059   16.2  11.0   2.2   2   0   0   2   2   2   1 -
+PVPAM_090054100_t1_frame+1 -          Plasmodium_Vir       PF05795.17    0.0006   16.2   0.4      0.31    7.3   0.1   2.1   2   0   0   2   2   2   0 -
+PVPAM_060006400_t1_frame-2 -          Plasmodium_Vir       PF05795.17   0.00069   16.0  27.3     0.025   10.9   9.7   2.1   2   0   0   2   2   2   2 -
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      data/hmm/VIR.hmm
+# Target file:     data/pseudogenes/tmp_PvPAM_type_exon_first.fasta
+# Option settings: .loom/env/bin/hmmsearch --tblout data/pseudogenes/tmp_PvPAM_type_exon_first.tbl -E 1e-3 data/hmm/VIR.hmm data/pseudogenes/tmp_PvPAM_type_exon_first.fasta 
+# Current dir:     /Users/anton/.loom/analyses/phist2
+# Date:            Wed Jun 10 09:59:09 2026
+# [ok]

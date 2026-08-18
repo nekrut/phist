@@ -1,0 +1,4 @@
+PvW1	PvPAM	pident	qcov	tcov	evalue	bits	synteny_score	in_tree	sister_leaves	confidence
+CAG9484573.1	CAI7717645.1	91.900	1.000	1.000	6.577E-266	805	3	False	False	high
+CAG9481896.1	CAI7719339.1	98.100	1.000	1.000	3.965E-296	893	4	False	False	high
+CAG9478286.1	CAI7721621.1	100.000	1.000	1.000	5.820E-272	821	3	False	False	high

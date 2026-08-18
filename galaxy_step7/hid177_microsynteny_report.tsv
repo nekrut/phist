@@ -1,0 +1,11 @@
+metric	count
+fs001_rbh_pairs	141
+housekeeping_rbh_pairs	5120
+confidence_high	3
+confidence_medium	10
+confidence_low	128
+synteny_score_0	118
+synteny_score_1	10
+synteny_score_2	10
+synteny_score_3	2
+synteny_score_4	1

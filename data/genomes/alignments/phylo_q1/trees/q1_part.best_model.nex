@@ -1,0 +1,8 @@
+#nexus
+begin sets;
+  charset AA = AA, 1-749;
+  charset 3DI = 750-1498;
+  charpartition mymodels =
+    VT+F+G4{5.64387}: AA{103.675},
+    3DI+G4{8.08977}: 3DI{18.1821};
+end;
