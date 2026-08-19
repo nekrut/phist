@@ -116,6 +116,12 @@ Galaxy honors new-style resource declarations: the GPU variant landed on an NVID
 CUDA 12.7 and ran `--gpu 1`, the CPU variant had no `nvidia-smi` and ran `--gpu 0`, both with
 `GALAXY_SLOTS=32`.
 
+**[`docs/galaxy-udt-agentic-summary.md`](docs/galaxy-udt-agentic-summary.md)** covers the UDT work in
+full: an inventory of the 10 tool IDs across ~27 registered versions, a seven-class failure taxonomy
+(templating collisions, container resolution, missing interpreters, missing build capabilities, silent
+semantic errors, nondeterminism, platform defects), the new-style `GalaxyUserTool` schema, and the
+verification loop that caught them.
+
 ## 5. Where to pick up — open threads
 
 **Step 9 — IQ-TREE on the Galaxy branch is the main blocker.** The Galaxy FoldMason alignment is far
