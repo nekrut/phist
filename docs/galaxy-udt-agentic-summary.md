@@ -296,6 +296,11 @@ their creator by default.** Embedding a UDT in a workflow and sharing that workf
 their own copy of the tool automatically, and an administrator can export a UDT to disk and install it
 instance-wide. That is the migration path from a personal UDT to a shared tool.
 
+These gaps were reported upstream as
+[galaxyproject/galaxy-hub#4213](https://github.com/galaxyproject/galaxy-hub/issues/4213), with a public
+write-up of the whole exercise at
+[gist.github.com/nekrut/3667d345c59fbea621aae1c8d5019c7e](https://gist.github.com/nekrut/3667d345c59fbea621aae1c8d5019c7e).
+
 ## 7. Verification discipline
 
 The agent's working loop was uniform across all nine steps and is the reason the failures above were
