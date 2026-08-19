@@ -80,9 +80,25 @@ recurred twice more: `anton-8-mmseqs_easy_rbh_pair` v1.0.0 and `anton-32-foldmas
 died at command-line construction because shell command substitutions `$(...)` conflicted with the
 `$(inputs.name.path)` reference syntax.
 
-The lesson is that `$(...)` belongs to the UDT templating layer, so a shell command that needs its own
-substitution must avoid the sequence entirely. Our working tools assign inputs to shell variables once
-at the top (`threads="$(inputs.threads)"`) and use plain `$threads` thereafter.
+We diagnosed this empirically at the time. The official documentation supplies the mechanism: a
+`shell_command` is **not** a shell string with variable interpolation but a string containing
+**sandboxed JavaScript expressions inside `$( ... )`**. The documented example makes the evaluator
+visible —
+
+```yaml
+shell_command: |
+  cat $(inputs.datasets.map((input) => input.path).join(' ')) > output.txt
+```
+
+— `.map()` and `.join()` are JavaScript, evaluated before the shell ever sees the string. So a shell
+command substitution `$(nproc)` is not passed through; it is parsed as a JavaScript expression and
+fails. This is the single most useful thing to know before authoring a UDT, and it turns our empirical
+rule into a principled one: **`$(...)` is reserved for the JavaScript layer, and shell syntax that
+needs it must be avoided entirely.**
+
+Our working tools assign inputs to shell variables once at the top (`threads="$(inputs.threads)"`) and
+use plain `$threads` thereafter — which is correct precisely because `$threads` without parentheses is
+invisible to the JavaScript evaluator and reaches the shell intact.
 
 ### 4.2 Container reference resolution
 
@@ -234,6 +250,52 @@ missing `pydantic` in the project environment; server-side creation validation a
 was scripted in
 [`../udt_defs/foldseek_udt_newstyle_register.py`](../udt_defs/foldseek_udt_newstyle_register.py).
 
+## 6a. Reconciling with the official documentation
+
+After the fact we checked our findings against the two official sources — the community page at
+[galaxyproject.org/tools/user-defined-tools](https://galaxyproject.org/tools/user-defined-tools) and the
+admin reference at
+[docs.galaxyproject.org/en/master/admin/user_defined_tools.html](https://docs.galaxyproject.org/en/master/admin/user_defined_tools.html).
+Three things we relied on turn out to be **undocumented behavior**, which is worth stating plainly
+because it means they can change without notice.
+
+| What we did | Documentation status |
+| :--- | :--- |
+| `requirements: [{type: resource, cores_min, ram_min, cuda_device_count_min/max, gpu_memory_min}]` | **Not documented.** No resource-requirement block appears in either source. The server accepted it and, per §5, demonstrably honored it. |
+| Tool-ID prefix drives job routing (`anton-1-`, `anton-32-`, `anton-gpu-xl-`) | **Not documented.** Neither source mentions job routing, destination selection, or ID conventions. |
+| Container string must be a fully-qualified Quay path with no `docker://` and no build suffix | **Not documented.** Both sources require the `container` key but describe no resolution mechanism or fallback. |
+| Registration scripted through the Galaxy API | **Not documented.** Both sources describe authoring through the Tools panel UI only. |
+
+Conversely, the documentation states several constraints we should have known up front:
+
+- **UDTs are a beta feature, currently UseGalaxy.org only.** They require `enable_beta_tool_formats:
+  true` plus **Custom Tool Creation** and **Custom Tool Execution** roles.
+- **Definitions are canonically YAML**, not JSON. Our JSON payloads work because JSON is a subset of
+  YAML, but examples and future tooling assume YAML.
+- **Every UDT must run in a container** — there is no host-execution option. This is why §4.3 and §4.4
+  are structural rather than incidental: the container *is* the environment, so anything it lacks is
+  simply unavailable.
+- **The input vocabulary is deliberately restricted** to `boolean`, `integer`, `float`, `text`,
+  `select`, `color`, `data`, `data_collection`, plus the structural groups `conditional`, `repeat`, and
+  `section`. Types such as `hidden`, `drill_down`, `data_column`, `genomebuild`, `group_tag`, `baseurl`,
+  `rules`, and `directory` are **rejected at parse time**.
+- **Three hard limitations:** no access to Galaxy reference data, no access to dataset metadata or
+  metadata files (BAM indexes and the like), and no access to a tool's `extra_files` directory.
+
+The most consequential documented limitation, for our purposes, is this one:
+
+> *"Test cases aren't supported yet."*
+
+There is no in-platform mechanism for asserting that a UDT produces the right answer. That single line
+retroactively justifies the entire download-and-verify loop of §7: external verification against an
+independent baseline is not merely good hygiene here, it is **the only available form of testing**. The
+three silently-wrong `spatial_analysis` versions in §4.5 are what that gap looks like in practice.
+
+One useful thing we did not need but which matters for anyone building on this: **UDTs are private to
+their creator by default.** Embedding a UDT in a workflow and sharing that workflow gives each importer
+their own copy of the tool automatically, and an administrator can export a UDT to disk and install it
+instance-wide. That is the migration path from a personal UDT to a shared tool.
+
 ## 7. Verification discipline
 
 The agent's working loop was uniform across all nine steps and is the reason the failures above were
@@ -288,6 +350,11 @@ For anyone driving Galaxy UDTs from an agent, the record supports six concrete r
    loop by proving the blocker was the FoldMason build, not the platform.
 6. **Treat nondeterminism as a defect to fix, not a discrepancy to explain.** Making the exon-ordering
    rule explicit both fixed the tool and exposed a stale number in the reference baseline.
+7. **Read `shell_command` as JavaScript, not shell.** `$(...)` is a sandboxed JS expression evaluated
+   before the shell runs. Assign inputs to shell variables once at the top, then use bare `$var`.
+8. **Know which of your dependencies are undocumented.** Resource requirements, ID-prefix routing, and
+   container-string resolution all worked for us but appear in no official documentation, so they carry
+   no stability guarantee. Pin what you can and re-verify after platform upgrades.
 
 The broader observation is that the agent spent far more effort on containers, routing, templating, and
 verification than on the biology. Of roughly 27 UDT registrations, only about ten encoded new
